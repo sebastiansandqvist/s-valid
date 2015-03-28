@@ -1,0 +1,34 @@
+{
+  "name": "s-valid",
+  "version": "0.0.1",
+  "description": "Simple modular validator for strings and numbers",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "testStrings": "mocha --grep String",
+    "testNumbers": "mocha --grep Number"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sebastiansandqvist/s-valid"
+  },
+  "keywords": [
+    "javascript",
+    "validator"
+  ],
+  "author": "sebastian sandqvist",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sebastiansandqvist/s-valid/issues"
+  },
+  "homepage": "https://github.com/sebastiansandqvist/s-valid",
+  "devDependencies": {
+    "chai": "^2.1.2",
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.9.4",
+    "gulp-mocha": "^2.0.0",
+    "jshint-stylish": "^1.0.1",
+    "mocha": "^2.2.1"
+  },
+  "dependencies": {}
+}
