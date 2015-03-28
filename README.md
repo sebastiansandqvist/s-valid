@@ -32,7 +32,10 @@ if (valid.email('email@test.com')) {
 if (!valid.email(req.body.email)) {
 	// return error...
 }
+```
 
+### All String Methods
+```javascript
 // ----- String methods
 // ---------------------------------------
 valid.alphaNumeric('Test123') // true
@@ -90,8 +93,9 @@ valid.url('https://test.com:3000'); // true -- works with port numbers
 valid.url('http://4.35.153.221'); // true -- IP addresses are valid URLs
 valid.url('http://300.35.153.221'); // false -- invalid IP addresses fail
 valid.url('http:/test.com'); // false
-
-
+```
+### All Number Methods
+```javascript
 // ----- Number methods
 // ---------------------------------------
 valid.creditCard(4242424242424242); // true (matches Visa regexp)
