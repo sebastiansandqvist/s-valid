@@ -1,13 +1,10 @@
 # s-valid.js
 ## Simple common string and number validator
-s-valid is dependency-free and has complete test coverage. Use `npm test` or `mocha` to run unit tests.
+s-valid is a dependency-free string and number validator with complete test coverage. Use `npm test` or `mocha` to run unit tests.
 
 s-valid performs a type check before any other tests. String methods will only work on strings and number methods will only work on numbers.
 
-~~The script can be used modularly. For example, `require('s-valid').email` will only import the email validator.~~
-*(Modularity coming soon)*
-
-Some of the regular expressions are brought in from is_js (https://github.com/arasatasaygin/is.js). Some differences from is.js in the regular expressions used behind-the-scenes are:
+is.js (https://github.com/arasatasaygin/is.js) provided some of the regular expressions used behind-the-scenes, however the following improvements have been made to them:
 
 - URLs can include the port number and be IP addresses without failing
 - Affirmative string values can include any capitalization
