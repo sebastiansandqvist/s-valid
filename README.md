@@ -8,11 +8,12 @@ s-valid performs a type check before any other tests. String methods will only w
 *(Modularity coming soon)*
 
 Some of the regular expressions are brought in from is_js (https://github.com/arasatasaygin/is.js). Some differences from is.js in the regular expressions used behind-the-scenes are:
-	- URLs can include the port number and be IP addresses without failing
-	- Affirmative string values can include any capitalization
-	- "on" is also considered affirmative (useful for capturing checkbox values in POST requests)
-	- Negatory string values ("off", "no", "false") have been added
-	- More credit card types will pass validation
+
+- URLs can include the port number and be IP addresses without failing
+- Affirmative string values can include any capitalization
+- "on" is also considered affirmative (useful for capturing checkbox values in POST requests)
+- Negatory string values ("off", "no", "false") have been added
+- More credit card types will pass validation
 
 ## Installation
 ```
