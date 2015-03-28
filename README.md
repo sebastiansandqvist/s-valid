@@ -1,9 +1,8 @@
 # s-valid.js
-## Simple string ~~and number~~ validator for common uses
-### *(Number methods coming soon)*
+## Simple common string and number validator
 s-valid is dependency-free and has complete test coverage. Use `npm test` or `mocha` to run unit tests.
 
-s-valid performs a type check before any other tests. String methods will only work on strings ~~and number methods will only work on numbers.~~
+s-valid performs a type check before any other tests. String methods will only work on strings and number methods will only work on numbers.
 
 ~~The script can be used modularly. For example, `require('s-valid').email` will only import the email validator.~~
 *(Modularity coming soon)*
