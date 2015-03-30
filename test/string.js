@@ -156,6 +156,46 @@ describe('String', function() {
 	});
 
 
+	describe('_countChars', function() {
+
+		it('should throw if not passed correct len and str', function() {
+
+			expect(function() {
+				valid._countChars(null);
+			}).to.throw('s-valid character methods expect two arguments (Number, String)');
+
+			expect(function() {
+				valid._countChars('10', 2);
+			}).to.throw('s-valid character methods expect two arguments (Number, String)');
+
+		});
+
+		it('should not throw if passed len and str but not type', function() {
+
+			expect(function() {
+				valid._countChars(4, 'test');
+			}).to.not.throw();
+
+		});
+
+		it('should return true when given valid values', function() {
+			expect(valid._countChars(4, 'test', 'max')).to.be.true;
+			expect(valid._countChars(10, 'test', 'max')).to.be.true;
+			expect(valid._countChars(2, 'test', 'min')).to.be.true;
+			expect(valid._countChars(4, 'test', 'min')).to.be.true;
+			expect(valid._countChars(4, 'test')).to.be.true;
+		});
+
+		it('should return false when given invalid values', function() {
+			expect(valid._countChars(3, 'test', 'max')).to.be.false;
+			expect(valid._countChars(5, 'test', 'min')).to.be.false;
+			expect(valid._countChars(3, 'test')).to.be.false;
+			expect(valid._countChars(5, 'test')).to.be.false;
+		});
+
+	});
+
+
 	describe('Length', function() {
 
 		it('should throw if not passed correct parameters', function() {

@@ -1,6 +1,6 @@
 {
   "name": "s-valid",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Simple modular validator for strings and numbers",
   "main": "index.js",
   "scripts": {
