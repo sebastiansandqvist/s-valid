@@ -96,8 +96,8 @@ valid.url('http:/test.com'); // false
 ```javascript
 // ----- Number methods
 // ---------------------------------------
-valid.creditCard(4242424242424242); // true (matches Visa regexp)
-valid.creditCard(1234123412341234); // false
+valid.creditCard.generic(4242424242424242); // true (matches Visa regexp)
+valid.creditCard.generic(1234123412341234); // false
 
 valid.integer(1) // true
 valid.integer(0) // true

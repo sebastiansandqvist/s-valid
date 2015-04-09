@@ -1,0 +1,109 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 verbose node symlink /usr/local/bin/node
+5 verbose publish [ '.' ]
+6 silly cache add args [ '.', null ]
+7 verbose cache add spec .
+8 silly cache add parsed spec { raw: '.',
+8 silly cache add   scope: null,
+8 silly cache add   name: null,
+8 silly cache add   rawSpec: '.',
+8 silly cache add   spec: '/Users/sebastiansandqvist/Documents/Sites & Projects/apps/modules/s-valid',
+8 silly cache add   type: 'directory' }
+9 verbose addLocalDirectory /Users/sebastiansandqvist/.npm/s-valid/0.2.0/package.tgz not in flight; packing
+10 verbose tar pack [ '/Users/sebastiansandqvist/.npm/s-valid/0.2.0/package.tgz',
+10 verbose tar pack   '/Users/sebastiansandqvist/Documents/Sites & Projects/apps/modules/s-valid' ]
+11 verbose tarball /Users/sebastiansandqvist/.npm/s-valid/0.2.0/package.tgz
+12 verbose folder /Users/sebastiansandqvist/Documents/Sites & Projects/apps/modules/s-valid
+13 info prepublish s-valid@0.2.0
+14 verbose addLocalTarball adding from inside cache /Users/sebastiansandqvist/.npm/s-valid/0.2.0/package.tgz
+15 silly cache afterAdd s-valid@0.2.0
+16 verbose afterAdd /Users/sebastiansandqvist/.npm/s-valid/0.2.0/package/package.json not in flight; writing
+17 verbose afterAdd /Users/sebastiansandqvist/.npm/s-valid/0.2.0/package/package.json written
+18 silly publish { name: 's-valid',
+18 silly publish   version: '0.2.0',
+18 silly publish   description: 'Simple validator for strings and numbers',
+18 silly publish   main: 'index.js',
+18 silly publish   scripts:
+18 silly publish    { test: 'mocha',
+18 silly publish      testStrings: 'mocha --grep String',
+18 silly publish      testNumbers: 'mocha --grep Number' },
+18 silly publish   repository:
+18 silly publish    { type: 'git',
+18 silly publish      url: 'https://github.com/sebastiansandqvist/s-valid' },
+18 silly publish   keywords: [ 'javascript', 'validator' ],
+18 silly publish   author: { name: 'sebastian sandqvist' },
+18 silly publish   license: 'ISC',
+18 silly publish   bugs: { url: 'https://github.com/sebastiansandqvist/s-valid/issues' },
+18 silly publish   homepage: 'https://github.com/sebastiansandqvist/s-valid',
+18 silly publish   devDependencies:
+18 silly publish    { chai: '^2.1.2',
+18 silly publish      gulp: '^3.8.11',
+18 silly publish      'gulp-jshint': '^1.9.4',
+18 silly publish      'gulp-mocha': '^2.0.0',
+18 silly publish      'jshint-stylish': '^1.0.1',
+18 silly publish      mocha: '^2.2.1' },
+18 silly publish   dependencies: {},
+18 silly publish   readme: '# s-valid.js\n## Simple common string and number validator\ns-valid is a dependency-free string and number validator with complete test coverage. Use `npm test` or `mocha` to run unit tests.\n\ns-valid performs a type check before any other tests. String methods will only work on strings and number methods will only work on numbers.\n\nis.js (https://github.com/arasatasaygin/is.js) provided some of the regular expressions used behind-the-scenes, however the following improvements have been made to them:\n\n- URLs can include the port number and be IP addresses without failing\n- Affirmative string values can include any capitalization\n- "on" is also considered affirmative (useful for capturing checkbox values in POST requests)\n- Negatory string values ("off", "no", "false") have been added\n- More credit card types will pass validation\n\n## Installation\n```\nnpm install s-valid\n```\n\n## Usage\n```javascript\nvar valid = require(\'s-valid\');\n\n// simple validation\nif (valid.email(\'email@test.com\')) {\n\t// ...\n}\n\n// primary use case: server-side form validation\nif (!valid.email(req.body.email)) {\n\t// return error...\n}\n```\n\n### All String Methods\n```javascript\n// ----- String methods\n// ---------------------------------------\nvalid.alphaNumeric(\'Test123\') // true\nvalid.alphaNumeric(\'Tést\') // false\nvalid.alphaNumeric(\'Test 123\') // false\nvalid.alphaNumeric(\'Test_123\') // false\nvalid.alphaNumeric(\'Test-123\') // false\n\nvalid.email(\'email@test.com\'); // true\nvalid.email(\'email@test\'); // false\n\nvalid.empty(\'\'); // true\nvalid.empty(\' \'); // false\nvalid.empty(0); // false\nvalid.empty([]); // false -- Strings and Numbers only\nvalid.empty({}); // false\n\nvalid.length(4, \'test\') // true\nvalid.length(8, \'test\') // false\n\nvalid.maxChars(10, \'test\'); // true\nvalid.maxChars(4, \'test\'); // true\nvalid.maxChars(2, \'test\'); // false\n\nvalid.minChars(2, \'test\') // true\nvalid.minChars(4, \'test\') // true\nvalid.minChars(10, \'test\') //false\n\nvalid.notEmpty(\'test\') // true\nvalid.notEmpty(\' \') // true\nvalid.notEmpty(\'\') // false\nvalid.notEmpty(0) // false\nvalid.notEmpty([]) // false\n\nvalid.numberString(\'123\') // true\nvalid.numberString(\'-123\') // true\nvalid.numberString(\'123px\') // false\nvalid.numberString(\'$123000\') // false\n\nvalid.numberStringLoose(\'123\') // true\nvalid.numberStringLoose(\'-123\') // true\nvalid.numberStringLoose(\'123px\') // true\nvalid.numberStringLoose(\'$123,000.00\') // true\nvalid.numberStringLoose(\'test\') // false\nvalid.numberStringLoose(\'Infinity\') // false\n\nvalid.space(\' \'); // true\nvalid.space(\'\t\'); // false (is a tab)\nvalid.space(\'  \'); // false (is two spaces)\nvalid.space(\'spaced words\'); // false \n\nvalid.url(\'http://test.com\'); // true\nvalid.url(\'https://test.com\'); // true\nvalid.url(\'https://test.com:3000\'); // true -- works with port numbers\nvalid.url(\'http://4.35.153.221\'); // true -- IP addresses are valid URLs\nvalid.url(\'http://300.35.153.221\'); // false -- invalid IP addresses fail\nvalid.url(\'http:/test.com\'); // false\n```\n### All Number Methods\n```javascript\n// ----- Number methods\n// ---------------------------------------\nvalid.creditCard(4242424242424242); // true (matches Visa regexp)\nvalid.creditCard(1234123412341234); // false\n\nvalid.integer(1) // true\nvalid.integer(0) // true\nvalid.integer(-1) // true\nvalid.integer(10e+3) // true\nvalid.integer(10e-3) // false\nvalid.integer(1.5) // false\n\nvalid.positive(100); // true\nvalid.positive(-100); // false\nvalid.positive(0); // false\n\nvalid.negative(-100); // true\nvalid.negative(100); // false\nvalid.negative(0); // false\n\n```',
+18 silly publish   readmeFilename: 'README.md',
+18 silly publish   gitHead: '8b403677ccd642df6dd95213fcb5dcc50066a124',
+18 silly publish   _id: 's-valid@0.2.0',
+18 silly publish   _shasum: '1ca639a081f86d593b9971dc051648cdb4a27d7a',
+18 silly publish   _from: '.' }
+19 silly mapToRegistry name s-valid
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/s-valid
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading /Users/sebastiansandqvist/.npm/s-valid/0.2.0/package.tgz
+25 verbose request uri https://registry.npmjs.org/s-valid
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 5:26:01 PM
+28 verbose request id 524b0ad57bba1e89
+29 http request PUT https://registry.npmjs.org/s-valid
+30 http 409 https://registry.npmjs.org/s-valid
+31 verbose headers { date: 'Thu, 09 Apr 2015 00:26:00 GMT',
+31 verbose headers   server: 'Apache',
+31 verbose headers   'content-type': 'application/json',
+31 verbose headers   'cache-control': 'max-age=60',
+31 verbose headers   'content-length': '17',
+31 verbose headers   'accept-ranges': 'bytes',
+31 verbose headers   via: '1.1 varnish',
+31 verbose headers   'x-served-by': 'cache-lax1423-LAX',
+31 verbose headers   'x-cache': 'MISS',
+31 verbose headers   'x-cache-hits': '0',
+31 verbose headers   'x-timer': 'S1428539160.500067,VS0,VE185',
+31 verbose headers   'keep-alive': 'timeout=10, max=50',
+31 verbose headers   connection: 'Keep-Alive' }
+32 verbose request invalidating /Users/sebastiansandqvist/.npm/registry.npmjs.org/s-valid on PUT
+33 verbose request uri https://registry.npmjs.org/s-valid?write=true
+34 verbose request no auth needed
+35 info attempt registry request try #1 at 5:26:02 PM
+36 http request GET https://registry.npmjs.org/s-valid?write=true
+37 http 200 https://registry.npmjs.org/s-valid?write=true
+38 verbose stack Error: cannot modify pre-existing version
+38 verbose stack     at conflictError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/publish.js:182:11)
+38 verbose stack     at CachingRegistryClient.putNext (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/publish.js:145:15)
+38 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/publish.js:128:15
+38 verbose stack     at /usr/local/lib/node_modules/npm/lib/cache/caching-client.js:52:8
+38 verbose stack     at f (/usr/local/lib/node_modules/npm/node_modules/once/once.js:17:25)
+38 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:68:16
+38 verbose stack     at f (/usr/local/lib/node_modules/npm/node_modules/once/once.js:17:25)
+38 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:255:12)
+38 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
+38 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:344:22)
+39 verbose pkgid s-valid
+40 verbose cwd /Users/sebastiansandqvist/Documents/Sites & Projects/apps/modules/s-valid
+41 error Darwin 13.4.0
+42 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+43 error node v0.12.2
+44 error npm  v2.7.4
+45 error code EPUBLISHCONFLICT
+46 error publish fail Cannot publish over existing version.
+46 error publish fail Update the 'version' field in package.json and try again.
+46 error publish fail
+46 error publish fail To automatically increment version numbers, see:
+46 error publish fail     npm help version
+47 verbose exit [ 1, true ]
