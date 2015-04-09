@@ -53,7 +53,7 @@ valid._testRegexp = function(regexp, str) {
 
 valid._testCardRegexp = function(regexp, n) {
 	return this._regexps.creditCard[regexp].test(n);
-}
+};
 
 
 // ----- affirmative
@@ -352,9 +352,9 @@ function CreditCard(name) {
 
 		return true;
 
-	}
+	};
 
-};
+}
 
 
 // ----- specific card regexp validation
@@ -405,25 +405,26 @@ valid.creditCard = valid.card.generic = function(n) {
 
 	}
 
-	// method of testing credit cards from http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js
+	// method of testing credit cards from 
+	// http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js
 	var testNumber = 0;
 
-	for (var i = str.length - 1, currentDigit, currentDigitInteger = 0, evenIteration = false; i>=0; i--) {
+	for (var i = str.length - 1, current, currentInteger = 0, even = false; i>=0; i--) {
 		
-		currentDigit = str.charAt(i);
-		currentDigitInteger = parseInt(currentDigit, 10);
+		current = str.charAt(i);
+		currentInteger = parseInt(current, 10);
 
-		if (evenIteration && (currentDigitInteger *= 2) > 9 ) {
-			currentDigitInteger -= 9;
+		if (even && (currentInteger *= 2) > 9 ) {
+			currentInteger -= 9;
 		}
 
-		testNumber += currentDigitInteger;
-		evenIteration = !evenIteration;
+		testNumber += currentInteger;
+		even = !even;
 	}
 
 	return (testNumber % 10) === 0;
 
-}
+};
 
 
 // ----- integer

@@ -4,11 +4,12 @@
 
 ## Simple string and number validator
 #### For common tests (credit cards, urls, email addresses, ...)
-s-valid is a dependency-free string and number validator with complete test coverage. Use `npm test` or `mocha` to run unit tests.
+s-valid is a dependency-free string and number validator for Node & iojs with complete test coverage (`npm test`).
 
-s-valid performs a type check before any other tests. String methods will only work on strings and number methods will only work on numbers.
+*s-valid performs a type check before any other validation occurs.* String methods will only work on strings and number methods will only work on numbers.
 
-is.js (https://github.com/arasatasaygin/is.js) provided some of the regular expressions used behind-the-scenes, however the following improvements have been made to them:
+---
+[is.js](https://github.com/arasatasaygin/is.js) provided some of the regular expressions used behind-the-scenes, however the following improvements have been made to them:
 
 - URLs can include the port number and be IP addresses without failing
 - Affirmative string values can include any capitalization
