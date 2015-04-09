@@ -1,7 +1,7 @@
 {
   "name": "s-valid",
-  "version": "0.1.0",
-  "description": "Simple modular validator for strings and numbers",
+  "version": "0.2.0",
+  "description": "Simple validator for strings and numbers",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
