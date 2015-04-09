@@ -8,7 +8,7 @@ s-valid is a dependency-free string and number validator for Node & iojs with co
 
 *s-valid performs a type check before any other validation occurs.* String methods will only work on strings and number methods will only work on numbers.
 
-> [is.js](https://github.com/arasatasaygin/is.js) provided some of the regular expressions used behind-the-scenes, however the following improvements have been made to them:
+[is.js](https://github.com/arasatasaygin/is.js) provided some of the regular expressions used behind-the-scenes, however the following improvements have been made to them:
 
 - URLs can include the port number and be IP addresses without failing
 - Affirmative string values can include any capitalization
@@ -66,13 +66,19 @@ valid.email('email@test.com'); // true
 valid.email('email@test'); // false
 ```
 
-##### Empty
+##### Empty / Not Empty
 ```javascript
 valid.empty(''); // true
 valid.empty(' '); // false
 valid.empty(0); // false
 valid.empty([]); // false -- Strings only
 valid.empty({}); // false
+
+valid.notEmpty('test'); // true
+valid.notEmpty(' '); // true
+valid.notEmpty(''); // false
+valid.notEmpty(0); // false
+valid.notEmpty([]); // false
 ```
 
 ##### Length (number, string)
@@ -95,18 +101,8 @@ valid.minChars(4, 'test'); // true
 valid.minChars(10, 'test'); // false
 ```
 
-##### Not empty 
-*(opposite of `empty` above, maintains typecheck)*
-```javascript
-valid.notEmpty('test'); // true
-valid.notEmpty(' '); // true
-valid.notEmpty(''); // false
-valid.notEmpty(0); // false
-valid.notEmpty([]); // false
-```
-
 ##### Number string
-*Is this string a valid number?*
+*(Is this string a valid number?)*
 ```javascript
 valid.numberString('123'); // true
 valid.numberString('-123'); // true
@@ -146,7 +142,7 @@ valid.url('http:/test.com'); // false
 ## All Number Methods
 
 ##### CreditCard
-*Note: valid.creditCard() is just an alias for valid.card.generic()*
+*Note: `valid.creditCard()` is just an alias for `valid.card.generic()`*
 ```javascript
 valid.creditCard(4242424242424242); // true (matches Visa regexp)
 valid.creditCard(5610591081018250); // true with no regexp match (Australian Bankcard)
