@@ -1,5 +1,9 @@
 # s-valid.js
-## Simple common string and number validator
+
+![Dependencies](https://img.shields.io/david/sebastiansandqvist/s-valid.svg) [![build status](http://img.shields.io/travis/sebastiansandqvist/s-valid.svg)](https://travis-ci.org/sebastiansandqvist/s-valid) [![NPM version](https://img.shields.io/npm/v/s-valid.svg)](https://www.npmjs.com/package/s-valid) [![NPM license](https://img.shields.io/npm/l/s-valid.svg)](https://www.npmjs.com/package/s-valid)
+
+## Simple string and number validator
+#### For common tests (credit cards, urls, email addresses, ...)
 s-valid is a dependency-free string and number validator with complete test coverage. Use `npm test` or `mocha` to run unit tests.
 
 s-valid performs a type check before any other tests. String methods will only work on strings and number methods will only work on numbers.
@@ -96,15 +100,17 @@ valid.url('http:/test.com'); // false
 ```javascript
 // ----- Number methods
 // ---------------------------------------
-valid.creditCard.generic(4242424242424242); // true (matches Visa regexp)
-valid.creditCard.generic(5610591081018250); // true with no regexp match (Australian Bankcard)
-valid.creditCard.generic(1234123412341234); // false
+
+// Note: valid.creditCard() is just an alias for valid.card.generic()
+valid.creditCard(4242424242424242); // true (matches Visa regexp)
+valid.creditCard(5610591081018250); // true with no regexp match (Australian Bankcard)
+valid.creditCard(1234123412341234); // false
 
 // Specific card tests exist for:
 // visa, mastercard, amex, maestro, jcb, unionpay, 
 // discover, solo, carteBlanche, dinersClub, and lasercard
-valid.creditCard.amex(371449635398431);  // true
-valid.creditCard.amex(4242424242424242); // false (is Visa)
+valid.card.amex(371449635398431);  // true
+valid.card.amex(4242424242424242); // false (is Visa)
 
 valid.integer(1); // true
 valid.integer(0); // true
