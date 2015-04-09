@@ -359,7 +359,7 @@ function CreditCard(name) {
 
 // ----- specific card regexp validation
 // ---------------------------------------
-valid.creditCard = {
+valid.card = {
 	mastercardVisa: new CreditCard('mastercardVisa'),
 	mastercard: new CreditCard('mastercardVisa'), // alias
 	visa: new CreditCard('mastercardVisa'), // alias
@@ -381,7 +381,7 @@ valid.creditCard = {
 //		--	3. return true if any specific test passes
 //		--	4. perform complex check based on number
 // ---------------------------------------
-valid.creditCard.generic = function(n) {
+valid.creditCard = valid.card.generic = function(n) {
 
 	if (!valid._isNumber(n)) {
 		return false;
