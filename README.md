@@ -99,6 +99,11 @@ valid.url('http:/test.com'); // false
 valid.creditCard.generic(4242424242424242); // true (matches Visa regexp)
 valid.creditCard.generic(1234123412341234); // false
 
+// specific card tests exist for:
+// visa, mastercard, amex, maestro, jcb, unionpay, 
+// discover, solo, carteBlanche, dinersClub, and lasercard
+valid.creditCard.amex(371449635398431) // true
+
 valid.integer(1) // true
 valid.integer(0) // true
 valid.integer(-1) // true
