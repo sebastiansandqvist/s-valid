@@ -69,6 +69,7 @@ describe('Number', function() {
 				expect(valid.creditCard.generic(6759649826438453)).to.be.true; // maestro
 				expect(valid.creditCard.generic(6759000000000000)).to.be.true; // maestro uk
 				expect(valid.creditCard.generic(6799990100000000019)).to.be.true; // maestro
+				expect(valid.creditCard.generic(5610591081018250)).to.be.true; // australian bankcard (not in any regexp)
 			});
 
 			it('should return false if not passed a valid credit card number', function() {

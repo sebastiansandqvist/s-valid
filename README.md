@@ -97,6 +97,7 @@ valid.url('http:/test.com'); // false
 // ----- Number methods
 // ---------------------------------------
 valid.creditCard.generic(4242424242424242); // true (matches Visa regexp)
+valid.creditCard.generic(5610591081018250); // true with no regexp match (Australian Bankcard)
 valid.creditCard.generic(1234123412341234); // false
 
 // specific card tests exist for:
