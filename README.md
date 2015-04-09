@@ -36,11 +36,11 @@ if (!valid.email(req.body.email)) {
 ```javascript
 // ----- String methods
 // ---------------------------------------
-valid.alphaNumeric('Test123') // true
-valid.alphaNumeric('Tést') // false
-valid.alphaNumeric('Test 123') // false
-valid.alphaNumeric('Test_123') // false
-valid.alphaNumeric('Test-123') // false
+valid.alphaNumeric('Test123'); // true
+valid.alphaNumeric('Tést'); // false
+valid.alphaNumeric('Test 123'); // false
+valid.alphaNumeric('Test_123'); // false
+valid.alphaNumeric('Test-123'); // false
 
 valid.email('email@test.com'); // true
 valid.email('email@test'); // false
@@ -51,34 +51,34 @@ valid.empty(0); // false
 valid.empty([]); // false -- Strings and Numbers only
 valid.empty({}); // false
 
-valid.length(4, 'test') // true
-valid.length(8, 'test') // false
+valid.length(4, 'test'); // true
+valid.length(8, 'test'); // false
 
 valid.maxChars(10, 'test'); // true
 valid.maxChars(4, 'test'); // true
 valid.maxChars(2, 'test'); // false
 
-valid.minChars(2, 'test') // true
-valid.minChars(4, 'test') // true
-valid.minChars(10, 'test') //false
+valid.minChars(2, 'test'); // true
+valid.minChars(4, 'test'); // true
+valid.minChars(10, 'test'); // false
 
-valid.notEmpty('test') // true
-valid.notEmpty(' ') // true
-valid.notEmpty('') // false
-valid.notEmpty(0) // false
-valid.notEmpty([]) // false
+valid.notEmpty('test'); // true
+valid.notEmpty(' '); // true
+valid.notEmpty(''); // false
+valid.notEmpty(0); // false
+valid.notEmpty([]); // false
 
-valid.numberString('123') // true
-valid.numberString('-123') // true
-valid.numberString('123px') // false
-valid.numberString('$123000') // false
+valid.numberString('123'); // true
+valid.numberString('-123'); // true
+valid.numberString('123px'); // false
+valid.numberString('$123000'); // false
 
-valid.numberStringLoose('123') // true
-valid.numberStringLoose('-123') // true
-valid.numberStringLoose('123px') // true
-valid.numberStringLoose('$123,000.00') // true
-valid.numberStringLoose('test') // false
-valid.numberStringLoose('Infinity') // false
+valid.numberStringLoose('123'); // true
+valid.numberStringLoose('-123'); // true
+valid.numberStringLoose('123px'); // true
+valid.numberStringLoose('$123,000.00'); // true
+valid.numberStringLoose('test'); // false
+valid.numberStringLoose('Infinity'); // false
 
 valid.space(' '); // true
 valid.space('	'); // false (is a tab)
@@ -100,17 +100,18 @@ valid.creditCard.generic(4242424242424242); // true (matches Visa regexp)
 valid.creditCard.generic(5610591081018250); // true with no regexp match (Australian Bankcard)
 valid.creditCard.generic(1234123412341234); // false
 
-// specific card tests exist for:
+// Specific card tests exist for:
 // visa, mastercard, amex, maestro, jcb, unionpay, 
 // discover, solo, carteBlanche, dinersClub, and lasercard
-valid.creditCard.amex(371449635398431) // true
+valid.creditCard.amex(371449635398431);  // true
+valid.creditCard.amex(4242424242424242); // false (is Visa)
 
-valid.integer(1) // true
-valid.integer(0) // true
-valid.integer(-1) // true
-valid.integer(10e+3) // true
-valid.integer(10e-3) // false
-valid.integer(1.5) // false
+valid.integer(1); // true
+valid.integer(0); // true
+valid.integer(-1); // true
+valid.integer(10e+3); // true
+valid.integer(10e-3); // false
+valid.integer(1.5); // false
 
 valid.positive(100); // true
 valid.positive(-100); // false
