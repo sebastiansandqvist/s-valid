@@ -66,41 +66,6 @@ valid.email('email@test.com'); // true
 valid.email('email@test'); // false
 ```
 
-##### Empty / Not Empty
-```javascript
-valid.empty(''); // true
-valid.empty(' '); // false
-valid.empty(0); // false
-valid.empty([]); // false -- Strings only
-valid.empty({}); // false
-
-valid.notEmpty('test'); // true
-valid.notEmpty(' '); // true
-valid.notEmpty(''); // false
-valid.notEmpty(0); // false
-valid.notEmpty([]); // false
-```
-
-##### Length (number, string)
-```javascript
-valid.length(4, 'test'); // true
-valid.length(8, 'test'); // false
-```
-
-##### Maximum number of characters (number, string)
-```javascript
-valid.maxChars(10, 'test'); // true
-valid.maxChars(4, 'test'); // true
-valid.maxChars(2, 'test'); // false
-```
-
-##### Minimum number of characters (number, string)
-```javascript
-valid.minChars(2, 'test'); // true
-valid.minChars(4, 'test'); // true
-valid.minChars(10, 'test'); // false
-```
-
 ##### Number string
 *(Is this string a valid number?)*
 ```javascript
@@ -119,14 +84,6 @@ valid.numberStringLoose('123px'); // true
 valid.numberStringLoose('$123,000.00'); // true
 valid.numberStringLoose('test'); // false
 valid.numberStringLoose('Infinity'); // false
-```
-
-##### Space
-```javascript
-valid.space(' '); // true
-valid.space('	'); // false (is a tab)
-valid.space('  '); // false (is two spaces)
-valid.space('spaced words'); // false 
 ```
 
 ##### URL
