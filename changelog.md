@@ -1,4 +1,13 @@
 # s-valid changelog
+## 0.4.0
+* breaking changes. removed the following string methods:
+	* empty
+	* notEmpty
+	* space
+	* length
+	* maxChars
+	* minChars
+
 ## 0.3.0
 * breaking changes to credit card validation
 	* `valid.creditCard` is now an alias (shortcut) for `valid.card.generic`

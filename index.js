@@ -10,24 +10,24 @@ var valid = {};
 //				- http://stackoverflow.com/a/23231321
 // ---------------------------------------
 valid._regexps = {
-    affirmative: /^(?:1|t(?:rue)?|y(?:es)?|on|ok(?:ay)?)$/,
-    alphaNumeric: /^[A-Za-z0-9]+$/,
-    creditCard: {
-    	mastercardVisa: /^4[0-9]{12}(?:[0-9]{3})?$^5[1-5][0-9]{14}$|^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$/,
-    	amex: /^3[47][0-9]{13}$/,
-    	carteBlanche: /^389[0-9]{11}$|^380[0-9]{11}$/,
-    	dinersClub: /^3(?:0[0-5]|[68][0-9])[0-9]{11}$/,
-    	discover: /^65[4-9][0-9]{13}|64[4-9][0-9]{13}|6011[0-9]{12}|(622(?:12[6-9]|1[3-9][0-9]|[2-8][0-9][0-9]|9[01][0-9]|92[0-5])[0-9]{10})$/,
-    	jcb: /^(?:2131|1800|35\d{3})\d{11}$/,
-    	lasercard: /^(6304|6706|6709|6771)[0-9]{12,15}$/,
-    	maestro: /^(5018|5020|5038|6304|6759|6761|6763|6799)[0-9]{8,19}$/,
-    	solo: /^(6334|6767)[0-9]{12}|(6334|6767)[0-9]{14}|(6334|6767)[0-9]{15}$|^(4903|4905|4911|4936|6333|6759)[0-9]{12}|(4903|4905|4911|4936|6333|6759)[0-9]{14}|(4903|4905|4911|4936|6333|6759)[0-9]{15}|564182[0-9]{10}|564182[0-9]{12}|564182[0-9]{13}|633110[0-9]{10}|633110[0-9]{12}|633110[0-9]{13}$/,
-    	unionpay: /^(62[0-9]{14,17})$/
-    },
-    email: /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i,
-    negatory: /^(?:1|f(?:alse)?|n(?:o)?|off)$/,
-    url: /^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/i,
-    usZipCode: /^[0-9]{5}(?:[0-9]{4})?$/
+  affirmative: /^(?:1|t(?:rue)?|y(?:es)?|on|ok(?:ay)?)$/,
+  alphaNumeric: /^[A-Za-z0-9]+$/,
+  creditCard: {
+  	mastercardVisa: /^4[0-9]{12}(?:[0-9]{3})?$^5[1-5][0-9]{14}$|^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$/,
+  	amex: /^3[47][0-9]{13}$/,
+  	carteBlanche: /^389[0-9]{11}$|^380[0-9]{11}$/,
+  	dinersClub: /^3(?:0[0-5]|[68][0-9])[0-9]{11}$/,
+  	discover: /^65[4-9][0-9]{13}|64[4-9][0-9]{13}|6011[0-9]{12}|(622(?:12[6-9]|1[3-9][0-9]|[2-8][0-9][0-9]|9[01][0-9]|92[0-5])[0-9]{10})$/,
+  	jcb: /^(?:2131|1800|35\d{3})\d{11}$/,
+  	lasercard: /^(6304|6706|6709|6771)[0-9]{12,15}$/,
+  	maestro: /^(5018|5020|5038|6304|6759|6761|6763|6799)[0-9]{8,19}$/,
+  	solo: /^(6334|6767)[0-9]{12}|(6334|6767)[0-9]{14}|(6334|6767)[0-9]{15}$|^(4903|4905|4911|4936|6333|6759)[0-9]{12}|(4903|4905|4911|4936|6333|6759)[0-9]{14}|(4903|4905|4911|4936|6333|6759)[0-9]{15}|564182[0-9]{10}|564182[0-9]{12}|564182[0-9]{13}|633110[0-9]{10}|633110[0-9]{12}|633110[0-9]{13}$/,
+  	unionpay: /^(62[0-9]{14,17})$/
+  },
+  email: /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i,
+  negatory: /^(?:1|f(?:alse)?|n(?:o)?|off)$/,
+  url: /^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/i,
+  usZipCode: /^[0-9]{5}(?:[0-9]{4})?$/
 };
 
 
@@ -107,101 +107,6 @@ valid.email = function(str) {
 };
 
 
-// ----- empty
-// ---------------------------------------
-valid.empty = function(str) {
-
-	if (!this._isString(str)) {
-		return false;
-	}
-
-	if (str !== '') {
-		return false;
-	}
-
-	return true;
-
-};
-
-
-// ----- countChars
-//		--	used in length & maxChars & minChars
-// ---------------------------------------
-valid._countChars = function(len, str, type) {
-
-	if (!this._isNumber(len) || !this._isString(str)) {
-		throw new Error('s-valid character methods expect two arguments (Number, String)');
-	}
-
-	if (isNaN(len)) {
-		return false;
-	}
-
-	switch (type) {
-		
-		case 'max':
-			if (str.length > len) {
-				return false;
-			}
-			break;
-
-		case 'min':
-			if (str.length < len) {
-				return false;
-			}
-			break;
-
-		default:
-			if (str.length !== len) {
-				return false;
-			}
-
-	}
-
-	return true;
-
-};
-
-
-// ----- length
-// ---------------------------------------
-valid.length = function(len, str) {
-
-	if (arguments.length !== 2) {
-		throw new Error('s-valid character methods expect two arguments (Number, String)');
-	}
-
-	return this._countChars(len, str);
-
-};
-
-
-// ----- maxChars
-// ---------------------------------------
-valid.maxChars = function(len, str) {
-
-	if (arguments.length !== 2) {
-		throw new Error('s-valid character methods expect two arguments (Number, String)');
-	}
-
-	return this._countChars(len, str, 'max');
-
-};
-
-
-// ----- minChars
-// ---------------------------------------
-valid.minChars = function(len, str) {
-
-	if (arguments.length !== 2) {
-		throw new Error('s-valid character methods expect two arguments (Number, String)');
-	}
-
-	return this._countChars(len, str, 'min');
-
-};
-
-
 // ----- negatory
 // ---------------------------------------
 valid.negatory = function(str) {
@@ -219,23 +124,6 @@ valid.negatory = function(str) {
 };
 
 
-// ----- notEmpty
-// ---------------------------------------
-valid.notEmpty = function(str) {
-
-	if (!this._isString(str)) {
-		return false;
-	}
-
-	if (str === '') {
-		return false;
-	}
-
-	return true;
-
-};
-
-
 // ----- numberString
 // ---------------------------------------
 valid.numberString = function(str) {
@@ -244,7 +132,7 @@ valid.numberString = function(str) {
 		return false;
 	}
 
-	if (this.empty(str)) {
+	if (str === '') {
 		return false;
 	}
 
@@ -274,23 +162,6 @@ valid.numberStringLoose = function(str) {
 	}
 
 	if (isNaN(parseInt(str), 10)) {
-		return false;
-	}
-
-	return true;
-
-};
-
-
-// ----- space
-// ---------------------------------------
-valid.space = function(str) {
-
-	if (!this._isString(str)) {
-		return false;
-	}
-
-	if (str !== ' ') {
 		return false;
 	}
 
