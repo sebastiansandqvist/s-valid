@@ -8,6 +8,8 @@ s-valid is a dependency-free string and number validator for Node & iojs with co
 
 *s-valid performs a type check before any other validation occurs.* String methods will only work on strings and number methods will only work on numbers.
 
+The purpose of this module is to simplify validation that requires regular expressions or multiple steps. It will not include anything that is already simple to calculate and reason about, such as string length.
+
 [is.js](https://github.com/arasatasaygin/is.js) provided some of the regular expressions used behind-the-scenes, however the following improvements have been made to them:
 
 - URLs can include the port number and be IP addresses without failing
@@ -75,15 +77,15 @@ valid.numberString('123px'); // false
 valid.numberString('$123000'); // false
 ```
 
-##### Loose number string
-*Similar to above, but less restrictive. Passes for $, commas, and units (such as 12px)*
+##### Value string
+*Similar to above, but less restrictive. Passes for $ (or any non-number first character), commas, and units (such as 12px or 38BTC)*
 ```javascript
-valid.numberStringLoose('123'); // true
-valid.numberStringLoose('-123'); // true
-valid.numberStringLoose('123px'); // true
-valid.numberStringLoose('$123,000.00'); // true
-valid.numberStringLoose('test'); // false
-valid.numberStringLoose('Infinity'); // false
+valid.valueString('123'); // true
+valid.valueString('-123'); // true
+valid.valueString('123px'); // true
+valid.valueString('$123,000.00'); // true
+valid.valueString('test'); // false
+valid.valueString('Infinity'); // false
 ```
 
 ##### URL
@@ -134,16 +136,9 @@ valid.integer(10e-3); // false
 valid.integer(1.5); // false
 ```
 
-##### Positive number
+##### Zip code
 ```javascript
-valid.positive(100); // true
-valid.positive(-100); // false
-valid.positive(0); // false
-```
-
-##### Negative number
-```javascript
-valid.negative(-100); // true
-valid.negative(100); // false
-valid.negative(0); // false
+valid.zipCode(89052); // true
+valid.zipCode(890526589); // true
+valid.zipCode(123456); // false
 ```

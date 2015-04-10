@@ -1,4 +1,10 @@
 # s-valid changelog
+## 0.5.0
+* breaking changes
+	* renamed `numberStringLoose` to `valueString`
+	* removed number methods `positive` and `negative`
+
+
 ## 0.4.0
 * breaking changes. removed the following string methods:
 	* empty

@@ -207,60 +207,7 @@ describe('Number', function() {
 		});
 
 	});
-
-
-	describe('Negative', function() {
-
-		it('should return false if not passed a number', function() {
-			expect(valid.negative('-20')).to.be.false;
-		});
-
-		it('should return true if passed a negative number', function() {
-			expect(valid.negative(-Infinity)).to.be.true;
-			expect(valid.negative(-1)).to.be.true;
-			expect(valid.negative(-3.2e+33)).to.be.true;
-			expect(valid.negative(-3200000000000000000000000000000000)).to.be.true;
-		});
-
-		it('should return false if not passed a negative number', function() {
-			expect(valid.negative(Infinity)).to.be.false;
-			expect(valid.negative(100)).to.be.false;
-			expect(valid.negative(0)).to.be.false;
-			expect(valid.negative(+0)).to.be.false;
-			expect(valid.negative(-0)).to.be.false;
-			expect(valid.negative(NaN)).to.be.false;
-			expect(valid.negative(3.2e+33)).to.be.false;
-			expect(valid.negative(3200000000000000000000000000000000)).to.be.false;
-		});
-
-	});
-
-	describe('Positive', function() {
-
-		it('should return false if not passed a number', function() {
-			expect(valid.positive('20')).to.be.false;
-		});
-
-		it('should return true if passed a positive number', function() {
-			expect(valid.positive(Infinity)).to.be.true;
-			expect(valid.positive(1)).to.be.true;
-			expect(valid.positive(3.2e+33)).to.be.true;
-			expect(valid.positive(3200000000000000000000000000000000)).to.be.true;
-		});
-
-		it('should return false if not passed a positive number', function() {
-			expect(valid.positive(-Infinity)).to.be.false;
-			expect(valid.positive(-100)).to.be.false;
-			expect(valid.positive(0)).to.be.false;
-			expect(valid.positive(+0)).to.be.false;
-			expect(valid.positive(-0)).to.be.false;
-			expect(valid.positive(NaN)).to.be.false;
-			expect(valid.positive(-3.2e+33)).to.be.false;
-			expect(valid.positive(-3200000000000000000000000000000000)).to.be.false;
-		});
-
-	});
-
+	
 
 	describe('Zip Code', function() {
 

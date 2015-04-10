@@ -141,9 +141,9 @@ valid.numberString = function(str) {
 };
 
 
-// ----- numberStringLoose
+// ----- valueString
 // ---------------------------------------
-valid.numberStringLoose = function(str) {
+valid.valueString = function(str) {
 
 	if (this._isString(str)) {
 
@@ -306,46 +306,7 @@ valid.integer = function(n) {
 		return false;
 	}
 
-	// if (isNaN(n)) {
-	// 	return false;
-	// }
-
 	return n % 1 === 0; 
-
-};
-
-// ----- negative
-// ---------------------------------------
-valid.negative = function(n) {
-
-	if (!this._isNumber(n)) {
-		return false;
-	}
-
-	// n >= 0 does not pass for NaN
-	if (!(n < 0)) {
-		return false;
-	}
-
-	return true;
-
-};
-
-
-// ----- positive
-// ---------------------------------------
-valid.positive = function(n) {
-
-	if (!this._isNumber(n)) {
-		return false;
-	}
-
-	// n <= 0 does not pass for NaN
-	if (!(n > 0)) {
-		return false;
-	}
-
-	return true;
 
 };
 
