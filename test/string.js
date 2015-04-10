@@ -211,6 +211,8 @@ describe('String', function() {
 			expect(valid.valueString('123-123')).to.be.true;
 			expect(valid.valueString('123,000')).to.be.true;
 			expect(valid.valueString('123,000.00')).to.be.true;
+			expect(valid.valueString('(123)')).to.be.true;
+			expect(valid.valueString('#000000')).to.be.true;
 		});
 
 		it('should return false if passed a bad string', function() {

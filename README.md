@@ -82,6 +82,7 @@ valid.numberString('$123000'); // false
 ```javascript
 valid.valueString('123'); // true
 valid.valueString('-123'); // true
+valid.valueString('#000000'); // true
 valid.valueString('123px'); // true
 valid.valueString('$123,000.00'); // true
 valid.valueString('test'); // false
