@@ -4,11 +4,13 @@
 
 ## Simple string and number validator
 #### For common tests (credit cards, urls, email addresses, ...)
-s-valid is a dependency-free string and number validator for Node & iojs with complete test coverage (`npm test`).
+* **Dependency-free**
+* **Tested on node & iojs**
+* **Complete test coverage (`npm test`).**
 
 *s-valid performs a type check before any other validation occurs.* String methods will only work on strings and number methods will only work on numbers.
 
-The purpose of this module is to simplify validation that requires regular expressions or multiple steps. It will not include anything that is already simple to calculate and reason about, such as string length.
+The purpose of this module is to simplify validation that requires regular expressions or multiple steps. It will not include anything that is already simple to calculate and reason about, such as string length. Expect frequent breaking changes before 1.0.0.
 
 [is.js](https://github.com/arasatasaygin/is.js) provided some of the regular expressions used behind-the-scenes, however the following improvements have been made to them:
 
@@ -53,8 +55,17 @@ valid.negatory('off'); // true
 valid.negatory('false'); // true
 ```
 
-##### Alphanumeric
+##### Alpha (alphabetic) / Numeric / AlphaNumeric
 ```javascript
+valid.alpha('Foo'); // true
+valid.alpha('Foo bar'); // false
+valid.alpha('Test123'); // false
+
+valid.numeric('123'); // true
+valid.numeric('-123'); // true
+valid.numeric('123px'); // false
+valid.numeric('$123000'); // false
+
 valid.alphaNumeric('Test123'); // true
 valid.alphaNumeric('Tést'); // false
 valid.alphaNumeric('Test 123'); // false
@@ -68,25 +79,16 @@ valid.email('email@test.com'); // true
 valid.email('email@test'); // false
 ```
 
-##### Number string
-*(Is this string a valid number?)*
-```javascript
-valid.numberString('123'); // true
-valid.numberString('-123'); // true
-valid.numberString('123px'); // false
-valid.numberString('$123000'); // false
-```
-
 ##### Value string
-*Similar to above, but less restrictive. Passes for $ (or any non-number first character), commas, and units (such as 12px or 38BTC)*
+*Similar to `numeric`, but less restrictive. Passes for $ (or any non-number first character), commas, and units (such as 12px or 38BTC)*
 ```javascript
-valid.valueString('123'); // true
-valid.valueString('-123'); // true
-valid.valueString('#000000'); // true
-valid.valueString('123px'); // true
-valid.valueString('$123,000.00'); // true
-valid.valueString('test'); // false
-valid.valueString('Infinity'); // false
+valid.value('123'); // true
+valid.value('-123'); // true
+valid.value('#000000'); // true
+valid.value('123px'); // true
+valid.value('$123,000.00'); // true
+valid.value('test'); // false
+valid.value('Infinity'); // false
 ```
 
 ##### URL

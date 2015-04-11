@@ -1,4 +1,11 @@
 # s-valid changelog
+## 0.6.0
+* breaking changes
+	* renamed `valueString` to `value`
+	* renamed `numberString` to `numeric`
+* other changes
+	* added `alpha` method
+
 ## 0.5.0
 * breaking changes
 	* renamed `numberStringLoose` to `valueString`

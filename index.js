@@ -11,6 +11,7 @@ var valid = {};
 // ---------------------------------------
 valid._regexps = {
   affirmative: /^(?:1|t(?:rue)?|y(?:es)?|on|ok(?:ay)?)$/,
+  alphabetic: /^[A-Za-z]+$/,
   alphaNumeric: /^[A-Za-z0-9]+$/,
   creditCard: {
   	mastercardVisa: /^4[0-9]{12}(?:[0-9]{3})?$^5[1-5][0-9]{14}$|^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$/,
@@ -90,6 +91,23 @@ valid.alphaNumeric = function(str) {
 };
 
 
+// ----- alphabetic
+// ---------------------------------------
+valid.alpha = function(str) {
+
+	if (!this._isString(str)) {
+		return false;
+	}
+
+	if (!this._testRegexp('alphabetic', str)) {
+		return false;
+	}
+
+	return true;
+
+};
+
+
 // ----- email
 // ---------------------------------------
 valid.email = function(str) {
@@ -124,9 +142,9 @@ valid.negatory = function(str) {
 };
 
 
-// ----- numberString
+// ----- numeric
 // ---------------------------------------
-valid.numberString = function(str) {
+valid.numeric = function(str) {
 
 	if (!this._isString(str)) {
 		return false;
@@ -141,9 +159,9 @@ valid.numberString = function(str) {
 };
 
 
-// ----- valueString
+// ----- value
 // ---------------------------------------
-valid.valueString = function(str) {
+valid.value = function(str) {
 
 	if (this._isString(str)) {
 

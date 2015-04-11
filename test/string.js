@@ -107,6 +107,37 @@ describe('String', function() {
 	});
 
 
+	describe('Alpha (alphabetic)', function() {
+
+		it('should return false if not passed a string', function() {
+			expect(valid.alpha(5)).to.be.false;
+		});
+
+		it('should return true if passed a valid alphabetic string', function() {
+			expect(valid.alpha('test')).to.be.true;
+			expect(valid.alpha('TEST')).to.be.true;
+		});
+
+		it('should return false if not passed a valid alphabetic string', function() {
+			expect(valid.alpha('')).to.be.false;
+			expect(valid.alpha('12345TEST12345')).to.be.false;
+			expect(valid.alpha('12345')).to.be.false;
+			expect(valid.alpha('à')).to.be.false;
+			expect(valid.alpha('Tést')).to.be.false;
+			expect(valid.alpha('$')).to.be.false;
+			expect(valid.alpha('asd$123')).to.be.false;
+			expect(valid.alpha('asd-123')).to.be.false;
+			expect(valid.alpha('asd_123')).to.be.false;
+			expect(valid.alpha('asd 123')).to.be.false;
+			expect(valid.alpha(' test')).to.be.false;
+			expect(valid.alpha('asd asd')).to.be.false;
+			expect(valid.alpha('asd@123')).to.be.false;
+			expect(valid.alpha('asd.')).to.be.false;
+		});
+
+	});
+
+
 	describe('Email', function() {
 
 		it('should return false if not passed a string', function() {
@@ -163,27 +194,27 @@ describe('String', function() {
 	});
 
 
-	describe('Number String', function() {
+	describe('Numeric String', function() {
 
 		it('should return false if not passed a string', function() {
-			expect(valid.numberString(0)).to.be.false;
+			expect(valid.numeric(0)).to.be.false;
 		});
 
 		it('should return true if passed a valid number string', function() {
-			expect(valid.numberString('0')).to.be.true;
-			expect(valid.numberString('123')).to.be.true;
-			expect(valid.numberString('-123')).to.be.true;
-			expect(valid.numberString('123.123')).to.be.true;
+			expect(valid.numeric('0')).to.be.true;
+			expect(valid.numeric('123')).to.be.true;
+			expect(valid.numeric('-123')).to.be.true;
+			expect(valid.numeric('123.123')).to.be.true;
 		});
 
 		it('should return false if passed a bad string', function() {
-			expect(valid.numberString('')).to.be.false;
-			expect(valid.numberString('test')).to.be.false;
-			expect(valid.numberString('123px')).to.be.false;
-			expect(valid.numberString('123%')).to.be.false;
-			expect(valid.numberString('$123')).to.be.false;
-			expect(valid.numberString('123,000')).to.be.false;
-			expect(valid.numberString('123.123.123')).to.be.false;
+			expect(valid.numeric('')).to.be.false;
+			expect(valid.numeric('test')).to.be.false;
+			expect(valid.numeric('123px')).to.be.false;
+			expect(valid.numeric('123%')).to.be.false;
+			expect(valid.numeric('$123')).to.be.false;
+			expect(valid.numeric('123,000')).to.be.false;
+			expect(valid.numeric('123.123.123')).to.be.false;
 		});
 
 	});
@@ -192,37 +223,37 @@ describe('String', function() {
 	describe('Value String', function() {
 
 		it('should return false if not passed a string', function() {
-			expect(valid.valueString(0)).to.be.false;
+			expect(valid.value(0)).to.be.false;
 		});
 
 		it('should return true if passed a valid number string', function() {
-			expect(valid.valueString('0')).to.be.true;
-			expect(valid.valueString('-0')).to.be.true;
-			expect(valid.valueString('+0')).to.be.true;
-			expect(valid.valueString('123')).to.be.true;
-			expect(valid.valueString('-123')).to.be.true;
-			expect(valid.valueString('+123')).to.be.true;
-			expect(valid.valueString('123.123')).to.be.true;
-			expect(valid.valueString('123px')).to.be.true;
-			expect(valid.valueString('123BTC')).to.be.true;
-			expect(valid.valueString('123 BTC')).to.be.true;
-			expect(valid.valueString('123%')).to.be.true;
-			expect(valid.valueString('$123')).to.be.true;
-			expect(valid.valueString('123-123')).to.be.true;
-			expect(valid.valueString('123,000')).to.be.true;
-			expect(valid.valueString('123,000.00')).to.be.true;
-			expect(valid.valueString('(123)')).to.be.true;
-			expect(valid.valueString('#000000')).to.be.true;
+			expect(valid.value('0')).to.be.true;
+			expect(valid.value('-0')).to.be.true;
+			expect(valid.value('+0')).to.be.true;
+			expect(valid.value('123')).to.be.true;
+			expect(valid.value('-123')).to.be.true;
+			expect(valid.value('+123')).to.be.true;
+			expect(valid.value('123.123')).to.be.true;
+			expect(valid.value('123px')).to.be.true;
+			expect(valid.value('123BTC')).to.be.true;
+			expect(valid.value('123 BTC')).to.be.true;
+			expect(valid.value('123%')).to.be.true;
+			expect(valid.value('$123')).to.be.true;
+			expect(valid.value('123-123')).to.be.true;
+			expect(valid.value('123,000')).to.be.true;
+			expect(valid.value('123,000.00')).to.be.true;
+			expect(valid.value('(123)')).to.be.true;
+			expect(valid.value('#000000')).to.be.true;
 		});
 
 		it('should return false if passed a bad string', function() {
-			expect(valid.valueString('')).to.be.false;
-			expect(valid.valueString('NaN')).to.be.false;
-			expect(valid.valueString('test')).to.be.false;
-			expect(valid.valueString('te123st')).to.be.false;
-			expect(valid.valueString('Infinity')).to.be.false;
-			expect(valid.valueString('-')).to.be.false;
-			expect(valid.valueString('+')).to.be.false;
+			expect(valid.value('')).to.be.false;
+			expect(valid.value('NaN')).to.be.false;
+			expect(valid.value('test')).to.be.false;
+			expect(valid.value('te123st')).to.be.false;
+			expect(valid.value('Infinity')).to.be.false;
+			expect(valid.value('-')).to.be.false;
+			expect(valid.value('+')).to.be.false;
 		});
 
 	});
