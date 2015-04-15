@@ -6,7 +6,7 @@
 #### For common tests (credit cards, urls, email addresses, ...)
 * **Dependency-free**
 * **Tested on node & iojs**
-* **Complete test coverage (`npm test`)**
+* **100% test coverage (`npm test`)**
 	* Run `npm run coverage`
 	* See coverage.html
 
