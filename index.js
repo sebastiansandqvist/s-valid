@@ -154,7 +154,7 @@ valid.value = function(str) {
 // ---------------------------------------
 valid.url = function(str) {
 
-	return this._testRegexp('url', str)
+	return this._testRegexp('url', str);
 
 };
 
