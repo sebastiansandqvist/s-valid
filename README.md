@@ -21,7 +21,7 @@ The purpose of this module is to simplify validation that requires regular expre
 - More credit card types will pass validation
 
 ## Installation
-```
+```bash
 npm install s-valid
 ```
 

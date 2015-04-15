@@ -27,8 +27,7 @@ valid._regexps = {
   },
   email: /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i,
   negatory: /^(?:1|f(?:alse)?|n(?:o)?|off)$/,
-  url: /^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/i,
-  usZipCode: /^[0-9]{5}(?:[0-9]{4})?$/
+  url: /^(?:(?:https?|ftp):\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/i
 };
 
 
@@ -49,6 +48,13 @@ valid._isString = function(str) {
 // ----- private regexp test methods
 // ---------------------------------------
 valid._testRegexp = function(regexp, str) {
+
+	if (!this._isString(str)) {
+		return false;
+	}
+
+	str = str.toLowerCase();
+
 	return this._regexps[regexp].test(str);
 };
 
@@ -61,15 +67,7 @@ valid._testCardRegexp = function(regexp, n) {
 // ---------------------------------------
 valid.affirmative = function(str) {
 
-	if (!this._isString(str)) {
-		return false;
-	}
-
-	if (!this._testRegexp('affirmative', str.toLowerCase())) {
-		return false;
-	}
-
-	return true;
+	return this._testRegexp('affirmative', str);
 
 };
 
@@ -78,15 +76,7 @@ valid.affirmative = function(str) {
 // ---------------------------------------
 valid.alphaNumeric = function(str) {
 
-	if (!this._isString(str)) {
-		return false;
-	}
-
-	if (!this._testRegexp('alphaNumeric', str)) {
-		return false;
-	}
-
-	return true;
+	return this._testRegexp('alphaNumeric', str);
 
 };
 
@@ -95,15 +85,7 @@ valid.alphaNumeric = function(str) {
 // ---------------------------------------
 valid.alpha = function(str) {
 
-	if (!this._isString(str)) {
-		return false;
-	}
-
-	if (!this._testRegexp('alphabetic', str)) {
-		return false;
-	}
-
-	return true;
+	return this._testRegexp('alphabetic', str);
 
 };
 
@@ -112,15 +94,7 @@ valid.alpha = function(str) {
 // ---------------------------------------
 valid.email = function(str) {
 
-	if (!this._isString(str)) {
-		return false;
-	}
-
-	if (!this._testRegexp('email', str)) {
-		return false;
-	}
-
-	return true;
+	return this._testRegexp('email', str);
 
 };
 
@@ -129,15 +103,7 @@ valid.email = function(str) {
 // ---------------------------------------
 valid.negatory = function(str) {
 
-	if (!this._isString(str)) {
-		return false;
-	}
-
-	if (!this._testRegexp('negatory', str.toLowerCase())) {
-		return false;
-	}
-
-	return true;
+	return this._testRegexp('negatory', str);
 
 };
 
@@ -166,7 +132,7 @@ valid.value = function(str) {
 	if (this._isString(str)) {
 
 		str = str.replace(',', '');
-		var numbers = ['0','1','2','3','4','5','6','7','8','9', '-', 'I'];
+		var numbers = ['0','1','2','3','4','5','6','7','8','9', '-'];
 		
 		// for $100 and #123, etc.
 		if (numbers.indexOf(str[0]) === -1) {
@@ -179,11 +145,7 @@ valid.value = function(str) {
 		return false;
 	}
 
-	if (isNaN(parseInt(str), 10)) {
-		return false;
-	}
-
-	return true;
+	return !isNaN(parseInt(str), 10);
 
 };
 
@@ -192,15 +154,7 @@ valid.value = function(str) {
 // ---------------------------------------
 valid.url = function(str) {
 
-	if (!this._isString(str)) {
-		return false;
-	}
-
-	if (!this._testRegexp('url', str)) {
-		return false;
-	}
-
-	return true;
+	return this._testRegexp('url', str)
 
 };
 
@@ -337,7 +291,9 @@ valid.zipCode = function(n) {
 		return false;
 	}
 
-	if (!this._testRegexp('usZipCode', n)) {
+	var len = n.toString().length;
+
+	if (len !== 5 && len !== 9) {
 		return false;
 	}
 
