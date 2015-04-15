@@ -6,7 +6,7 @@
 #### For common tests (credit cards, urls, email addresses, ...)
 * **Dependency-free**
 * **Tested on node & iojs**
-* **Test coverage for every method (`npm test`)**
+* **Complete test coverage (`npm test`), see coverage.html**
 
 *s-valid performs a type check before any other validation occurs.* String methods will only work on strings and number methods will only work on numbers.
 
