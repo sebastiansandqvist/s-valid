@@ -7,8 +7,6 @@
 * **Dependency-free**
 * **Tested on node & iojs**
 * **100% test coverage (`npm test`)**
-	* Run `npm run coverage`
-	* See etc/coverage.html
 
 *s-valid performs a type check before any other validation occurs.* String methods will only work on strings and number methods will only work on numbers.
 
