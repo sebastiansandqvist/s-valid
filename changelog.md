@@ -1,4 +1,10 @@
 # s-valid changelog
+## 1.0.0
+* **no more number methods**
+	* `zip` takes strings (not numbers)
+	* `creditCard` and `card.{type}` take strings
+	* removed `integer` method (too simple)
+
 ## 0.6.0
 * breaking changes
 	* renamed `valueString` to `value`
