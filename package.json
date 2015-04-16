@@ -1,6 +1,6 @@
 {
   "name": "s-valid",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -8,9 +8,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "testStrings": "mocha --grep String",
-    "testNumbers": "mocha --grep Number",
-    "coverage": "mocha --require blanket -R html-cov > coverage.html"
+    "coverage": "mocha --require blanket -R html-cov > etc/coverage.html"
   },
   "repository": {
     "type": "git",
