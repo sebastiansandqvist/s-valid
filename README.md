@@ -11,14 +11,6 @@
 
 This module simplifies validation that requires regular expressions or multiple steps. It will not include anything that is already simple to calculate and reason about, such as string length.
 
-[is.js](https://github.com/arasatasaygin/is.js) provided some of the regular expressions used behind-the-scenes, however the following improvements have been made to them:
-
-- URLs can include the port number and be IP addresses without failing
-- Affirmative string values can include any capitalization
-- "on" is also considered affirmative (useful for capturing checkbox values in POST requests)
-- Negatory string values ("off", "no", "false") have been added
-- More credit card types will pass validation
-
 ## Installation
 ```bash
 npm install --save s-valid
@@ -132,3 +124,12 @@ valid.zipCode('89052'); // true
 valid.zipCode('89052-6589'); // true
 valid.zipCode('890526589'); // false
 ```
+
+## Additional notes
+[is.js](https://github.com/arasatasaygin/is.js) provided some of the regular expressions used behind-the-scenes, however the following improvements have been made to them:
+
+- URLs can include the port number and be IP addresses without failing
+- Affirmative string values can include any capitalization
+- "on" is also considered affirmative (useful for capturing checkbox values in POST requests)
+- Negatory string values ("off", "no", "false") have been added
+- More credit card types will pass validation
