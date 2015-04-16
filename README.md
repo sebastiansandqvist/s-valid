@@ -2,15 +2,14 @@
 
 [![NPM version](https://img.shields.io/npm/v/s-valid.svg)](https://www.npmjs.com/package/s-valid) ![Dependencies](https://img.shields.io/david/sebastiansandqvist/s-valid.svg) [![build status](http://img.shields.io/travis/sebastiansandqvist/s-valid.svg)](https://travis-ci.org/sebastiansandqvist/s-valid) [![NPM license](https://img.shields.io/npm/l/s-valid.svg)](https://www.npmjs.com/package/s-valid) [![Test Coverage](https://codeclimate.com/github/sebastiansandqvist/s-valid/badges/coverage.svg)](https://codeclimate.com/github/sebastiansandqvist/s-valid)
 
-## Simple string and number validator
+## Simple string validator
 #### For common tests (credit cards, urls, email addresses, ...)
 * **Dependency-free**
 * **Tested on node & iojs**
-* **100% test coverage (`npm test`)**
 
-*s-valid performs a type check before any other validation occurs.* String methods will only work on strings and number methods will only work on numbers.
+*s-valid performs a type check before any other validation occurs.* Tests will only work on Strings.
 
-The purpose of this module is to simplify validation that requires regular expressions or multiple steps. It will not include anything that is already simple to calculate and reason about, such as string length. Expect frequent breaking changes before 1.0.0.
+This module simplifies validation that requires regular expressions or multiple steps. It will not include anything that is already simple to calculate and reason about, such as string length.
 
 [is.js](https://github.com/arasatasaygin/is.js) provided some of the regular expressions used behind-the-scenes, however the following improvements have been made to them:
 
@@ -40,7 +39,7 @@ if (!valid.email(req.body.email)) {
 }
 ```
 
-## All String Methods
+## All Methods
 
 ##### Affirmative / Negatory
 ```javascript
@@ -73,6 +72,32 @@ valid.alphaNumeric('Test_123'); // false
 valid.alphaNumeric('Test-123'); // false
 ```
 
+##### CreditCard
+*Note: `valid.creditCard()` is an alias for `valid.card.generic()`*
+```javascript
+valid.creditCard('4242424242424242'); // true (matches Visa regexp)
+valid.creditCard('5610591081018250'); // true with no regexp match (Australian Bankcard)
+valid.creditCard('1234123412341234'); // false
+```
+
+##### Card.{type}
+* Amex (`amex`)
+* Carte Blanche (`carteBlanche`)
+* Diners Club (`dinersClub`)
+* Discover (`discover`)
+* JCB (`jcb`)
+* Lasercard (`lasercard`)
+* Maestro (`maestro`)
+* Mastercard (`mastercard`)
+* Solo & Switch (`solo`)
+* Unionpay (`unionpay`)
+* Visa (`visa`)
+
+```javascript
+valid.card.amex('371449635398431'); // true
+valid.card.amex('4242424242424242'); // false (is Visa)
+```
+
 ##### Email
 ```javascript
 valid.email('email@test.com'); // true
@@ -101,47 +126,9 @@ valid.url('http://300.35.153.221'); // false -- invalid IP addresses fail
 valid.url('http:/test.com'); // false
 ```
 
-## All Number Methods
-
-##### CreditCard
-*Note: `valid.creditCard()` is just an alias for `valid.card.generic()`*
-```javascript
-valid.creditCard(4242424242424242); // true (matches Visa regexp)
-valid.creditCard(5610591081018250); // true with no regexp match (Australian Bankcard)
-valid.creditCard(1234123412341234); // false
-```
-
-##### Card.{type}
-* Amex (`amex`)
-* Carte Blanche (`carteBlanche`)
-* Diners Club (`dinersClub`)
-* Discover (`discover`)
-* JCB (`jcb`)
-* Lasercard (`lasercard`)
-* Maestro (`maestro`)
-* Mastercard (`mastercard`)
-* Solo & Switch (`solo`)
-* Unionpay (`unionpay`)
-* Visa (`visa`)
-
-```javascript
-valid.card.amex(371449635398431); // true
-valid.card.amex(4242424242424242); // false (is Visa)
-```
-
-##### Integer
-```javascript
-valid.integer(1); // true
-valid.integer(0); // true
-valid.integer(-1); // true
-valid.integer(10e+3); // true
-valid.integer(10e-3); // false
-valid.integer(1.5); // false
-```
-
 ##### Zip code
 ```javascript
-valid.zipCode(89052); // true
-valid.zipCode(890526589); // true
-valid.zipCode(123456); // false
+valid.zipCode('89052'); // true
+valid.zipCode('89052-6589'); // true
+valid.zipCode('890526589'); // false
 ```

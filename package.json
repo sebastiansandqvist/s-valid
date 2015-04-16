@@ -1,13 +1,14 @@
 {
   "name": "s-valid",
-  "version": "0.6.9",
+  "version": "1.0.0",
   "engines": {
     "node": ">= 0.10.0"
   },
-  "description": "Simple validator for strings and numbers",
+  "description": "Simple validator for strings",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
+    "coverage_html": "mocha --require blanket -R html-cov > etc/coverage.html",
     "coverage": "mocha --require blanket --reporter mocha-lcov-reporter > etc/lcov.info"
   },
   "repository": {
