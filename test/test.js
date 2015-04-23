@@ -329,18 +329,6 @@ describe('String', function() {
 
 	});
 
-
-});
-
-
-
-
-
-
-// ----- number tests
-// ---------------------------------------
-describe('Number', function() {
-
 	describe('_testCardRegexp', function() {
 
 		it('should have testable regexps', function() {
@@ -530,3 +518,146 @@ describe('Number', function() {
 
 });
 
+describe('Modular', function() {
+
+	it('affirmative should still work', function() {
+		var affirmative = require('../index.js').affirmative;
+		expect(affirmative('yes')).to.be.true;
+		expect(affirmative('no')).to.be.false;
+	});
+
+	it('alpha should still work', function() {
+		var alpha = require('../index.js').alpha;
+		expect(alpha('test')).to.be.true;
+		expect(alpha('123')).to.be.false;
+	});
+
+	it('alphaNumeric should still work', function() {
+		var alphaNumeric = require('../index.js').alphaNumeric;
+		expect(alphaNumeric('abc123')).to.be.true;
+		expect(alphaNumeric('$$$')).to.be.false;
+	});
+
+	it('email should still work', function() {
+		var isEmail = require('../index.js').email;
+		expect(isEmail('test@test.com')).to.be.true;
+		expect(isEmail('test@test')).to.be.false;
+	});
+
+	it('negatory should still work', function() {
+		var negatory = require('../index.js').negatory;
+		expect(negatory('no')).to.be.true;
+		expect(negatory('yes')).to.be.false;
+	});
+
+	it('numeric should still work', function() {
+		var numeric = require('../index.js').numeric;
+		expect(numeric('123')).to.be.true;
+		expect(numeric('123abc')).to.be.false;
+	});
+
+	it('value should still work', function() {
+		var value = require('../index.js').value;
+		expect(value('123px')).to.be.true;
+		expect(value('test')).to.be.false;
+	});
+
+	it('url should still work', function() {
+		var url = require('../index.js').url;
+		expect(url('http://google.com')).to.be.true;
+		expect(url('http://test.')).to.be.false;
+	});
+
+	it('zipCode should still work', function() {
+		var zipCode = require('../index.js').zipCode;
+		expect(zipCode('89052')).to.be.true;
+		expect(zipCode('00000')).to.be.false;
+	});
+
+	it('creditCard should still work', function() {
+		var creditCard = require('../index.js').creditCard;
+		expect(creditCard('4242424242424242')).to.be.true;
+		expect(creditCard('1234123412341234')).to.be.false;
+	});
+
+	it('card.generic should still work', function() {
+		var creditCard = require('../index.js').card.generic;
+		expect(creditCard('4242424242424242')).to.be.true;
+		expect(creditCard('1234123412341234')).to.be.false;
+	});
+
+	describe('card', function() {
+		
+		it('should work as an object with every card', function() {
+			var card = require('../index.js').card;
+			expect(card.visa('4242424242424242')).to.be.true;
+			expect(card.amex('378282246310005')).to.be.true;
+			expect(card.mastercard('5555555555554444')).to.be.true;
+			expect(card.discover('6011111111111117')).to.be.true;
+			expect(card.jcb('3530111333300000')).to.be.true;
+			expect(card.solo('6331101999990016')).to.be.true;
+			expect(card.carteBlanche('38000000000006')).to.be.true;
+			expect(card.dinersClub('30569309025904')).to.be.true;
+			expect(card.lasercard('6304850000000040')).to.be.true;
+			expect(card.unionpay('6240008631401148')).to.be.true;
+			expect(card.maestro('6759649826438453')).to.be.true;
+		});
+
+		it('visa should work', function() {
+			var visa = require('../index.js').card.visa;
+			expect(visa('4242424242424242')).to.be.true;
+		});
+
+		it('amex should work', function() {
+			var amex = require('../index.js').card.amex;
+			expect(amex('378282246310005')).to.be.true;
+		});
+
+		it('mastercard should work', function() {
+			var mastercard = require('../index.js').card.mastercard;
+			expect(mastercard('5555555555554444')).to.be.true;
+		});
+
+		it('discover should work', function() {
+			var discover = require('../index.js').card.discover;
+			expect(discover('6011111111111117')).to.be.true;
+		});
+
+		it('jcb should work', function() {
+			var jcb = require('../index.js').card.jcb;
+			expect(jcb('3530111333300000')).to.be.true;
+		});
+
+		it('solo should work', function() {
+			var solo = require('../index.js').card.solo;
+			expect(solo('6331101999990016')).to.be.true;
+		});
+
+		it('carteBlanche should work', function() {
+			var carteBlanche = require('../index.js').card.carteBlanche;
+			expect(carteBlanche('38000000000006')).to.be.true;
+		});
+
+		it('dinersClub should work', function() {
+			var dinersClub = require('../index.js').card.dinersClub;
+			expect(dinersClub('30569309025904')).to.be.true;
+		});
+
+		it('lasercard should work', function() {
+			var lasercard = require('../index.js').card.lasercard;
+			expect(lasercard('6304850000000040')).to.be.true;
+		});
+
+		it('unionpay should work', function() {
+			var unionpay = require('../index.js').card.unionpay;
+			expect(unionpay('6240008631401148')).to.be.true;
+		});
+
+		it('maestro should work', function() {
+			var maestro = require('../index.js').card.maestro;
+			expect(maestro('6759649826438453')).to.be.true;
+		});
+
+	});
+
+});

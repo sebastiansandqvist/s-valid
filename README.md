@@ -6,6 +6,7 @@
 #### For common tests (credit cards, urls, email addresses, ...)
 * **Dependency-free**
 * **Tested on node & iojs**
+* **Modular usage**
 
 *s-valid performs a type check before any other validation occurs. Strings only!*
 
@@ -31,7 +32,14 @@ if (!valid.email(req.body.email)) {
 }
 ```
 
-## All Methods
+## Modular usage
+```javascript
+var isEmail = require('s-valid').email;
+
+isEmail('email@test.com') // true;
+```
+
+## All methods
 
 ##### Affirmative / Negatory
 ```javascript

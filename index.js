@@ -76,7 +76,7 @@ valid._testCardRegexp = function(regexp, str) {
 // ---------------------------------------
 valid.affirmative = function(str) {
 
-	return this._testRegexp('affirmative', str);
+	return valid.affirmative._testRegexp('affirmative', str);
 
 };
 
@@ -85,7 +85,7 @@ valid.affirmative = function(str) {
 // ---------------------------------------
 valid.alphaNumeric = function(str) {
 
-	return this._testRegexp('alphaNumeric', str);
+	return valid.alphaNumeric._testRegexp('alphaNumeric', str);
 
 };
 
@@ -94,7 +94,7 @@ valid.alphaNumeric = function(str) {
 // ---------------------------------------
 valid.alpha = function(str) {
 
-	return this._testRegexp('alphabetic', str);
+	return valid.alpha._testRegexp('alphabetic', str);
 
 };
 
@@ -103,7 +103,7 @@ valid.alpha = function(str) {
 // ---------------------------------------
 valid.email = function(str) {
 
-	return this._testRegexp('email', str);
+	return valid.email._testRegexp('email', str);
 
 };
 
@@ -112,7 +112,7 @@ valid.email = function(str) {
 // ---------------------------------------
 valid.negatory = function(str) {
 
-	return this._testRegexp('negatory', str);
+	return valid.negatory._testRegexp('negatory', str);
 
 };
 
@@ -121,7 +121,7 @@ valid.negatory = function(str) {
 // ---------------------------------------
 valid.numeric = function(str) {
 
-	if (!this._isString(str)) {
+	if (!valid.numeric._isString(str)) {
 		return false;
 	}
 
@@ -138,7 +138,7 @@ valid.numeric = function(str) {
 // ---------------------------------------
 valid.value = function(str) {
 
-	if (this._isString(str)) {
+	if (valid.value._isString(str)) {
 
 		str = str.replace(',', '');
 		var numbers = ['0','1','2','3','4','5','6','7','8','9', '-'];
@@ -163,7 +163,7 @@ valid.value = function(str) {
 // ---------------------------------------
 valid.url = function(str) {
 
-	return this._testRegexp('url', str);
+	return valid.url._testRegexp('url', str);
 
 };
 
@@ -178,7 +178,7 @@ valid.zipCode = function(str) {
 		return false;
 	}
 
-	return this._testRegexp('zip', str);
+	return valid.zipCode._testRegexp('zip', str);
 
 };
 
@@ -269,4 +269,24 @@ valid.creditCard = valid.card.generic = function(str) {
 };
 
 
+// ----- add modularity
+//		--	TODO: don't add stuff to methods
+//				that don't use it
+// ---------------------------------------
+for (var prop in valid) {
+
+	if (valid.hasOwnProperty(prop) && typeof valid[prop] === 'function') {
+		if (prop.charAt(0) !== '_') {
+			valid[prop]._isString = valid._isString;
+			valid[prop]._regexps = valid._regexps;
+			valid[prop]._testRegexp = valid._testRegexp;
+			valid[prop]._testCardRegexp = valid._testCardRegexp;
+		}
+	}
+
+};
+
+
+// ----- export!
+// ---------------------------------------
 module.exports = valid;

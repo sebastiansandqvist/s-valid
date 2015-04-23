@@ -1,4 +1,7 @@
 # s-valid changelog
+## 1.2.0
+* added modularity (eg. `require('s-valid').email`)
+
 ## 1.1.0
 * distinct mastercard and visa regular expressions
 	* removed `mastercardVisa`
