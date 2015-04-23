@@ -14,7 +14,8 @@ valid._regexps = {
   alphabetic: /^[A-Za-z]+$/,
   alphaNumeric: /^[A-Za-z0-9]+$/,
   creditCard: {
-  	mastercardVisa: /^4[0-9]{12}(?:[0-9]{3})?$^5[1-5][0-9]{14}$|^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$/,
+  	visa: /^4[0-9]{12}(?:[0-9]{3})?$/,
+  	mastercard: /^5[1-5][0-9]{14}$/,
   	amex: /^3[47][0-9]{13}$/,
   	carteBlanche: /^389[0-9]{11}$|^380[0-9]{11}$/,
   	dinersClub: /^3(?:0[0-5]|[68][0-9])[0-9]{11}$/,
@@ -204,9 +205,8 @@ function CreditCard(name) {
 // ----- specific card regexp validation
 // ---------------------------------------
 valid.card = {
-	mastercardVisa: new CreditCard('mastercardVisa'),
-	mastercard: new CreditCard('mastercardVisa'), // alias
-	visa: new CreditCard('mastercardVisa'), // alias
+	mastercard: new CreditCard('mastercard'),
+	visa: new CreditCard('visa'),
 	amex: new CreditCard('amex'),
 	maestro: new CreditCard('maestro'),
 	jcb: new CreditCard('jcb'),

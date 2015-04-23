@@ -1,4 +1,8 @@
 # s-valid changelog
+## 1.1.0
+* distinct mastercard and visa regular expressions
+	* removed `mastercardVisa`
+
 ## 1.0.0
 * **no more number methods**
 	* `zip` takes strings (not numbers)

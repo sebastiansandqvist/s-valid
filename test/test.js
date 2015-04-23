@@ -344,16 +344,16 @@ describe('Number', function() {
 	describe('_testCardRegexp', function() {
 
 		it('should have testable regexps', function() {
-			expect(valid._regexps.creditCard['mastercardVisa'].test('4111111111111111')).to.be.true;
-			expect(valid._regexps.creditCard['mastercardVisa'].test('1234123412341234')).to.be.false;
+			expect(valid._regexps.creditCard['visa'].test('4111111111111111')).to.be.true;
+			expect(valid._regexps.creditCard['visa'].test('1234123412341234')).to.be.false;
 		});
 
 		it('should return true if passing a regexp test', function() {
-			expect(valid._testCardRegexp('mastercardVisa', '4111111111111111')).to.be.true;
+			expect(valid._testCardRegexp('visa', '4111111111111111')).to.be.true;
 		});
 
 		it('should return false if failing a regexp test', function() {
-			expect(valid._testCardRegexp('mastercardVisa', '4111111111111111')).to.be.true;
+			expect(valid._testCardRegexp('visa', '4111111111111111')).to.be.true;
 		});
 
 	});
@@ -432,32 +432,26 @@ describe('Number', function() {
 
 		});
 
-		describe('MasterCard / Visa', function() {
-			it('should only work for visa cards', function() {
-				expect(valid.card.mastercardVisa('4222222222222')).to.be.true;    // visa
-				expect(valid.card.mastercardVisa('4111111111111111')).to.be.true; // visa
-				expect(valid.card.mastercardVisa('4242424242424242')).to.be.true; // visa
-				expect(valid.card.mastercardVisa('5555555555554444')).to.be.true; // mastercard
-				expect(valid.card.mastercardVisa('5105105105105100')).to.be.true; // mastercard
-				expect(valid.card.mastercardVisa('378282246310005')).to.be.false; // amex
-				expect(valid.card.mastercardVisa(4242424242424242)).to.be.false; // visa
+		describe('Mastercard', function() {
+			it('should only work for mastercard cards', function() {
+				expect(valid.card.mastercard('5555555555554444')).to.be.true;  // mastercard
+				expect(valid.card.mastercard('5105105105105100')).to.be.true;  // mastercard
+				expect(valid.card.mastercard('4222222222222')).to.be.false;    // visa
+				expect(valid.card.mastercard('4111111111111111')).to.be.false; // visa
+				expect(valid.card.mastercard('4242424242424242')).to.be.false; // visa
+				expect(valid.card.mastercard('378282246310005')).to.be.false;  // amex
+				expect(valid.card.mastercard(4242424242424242)).to.be.false;   // visa
 			});
 		});
 
-		describe('Aliases for MasterCard / Visa', function() {
-			it('should still work', function() {
+		describe('Visa', function() {
+			it('should only work for visa cards', function() {
 				expect(valid.card.visa('4222222222222')).to.be.true;    // visa
 				expect(valid.card.visa('4111111111111111')).to.be.true; // visa
 				expect(valid.card.visa('4242424242424242')).to.be.true; // visa
-				expect(valid.card.visa('5555555555554444')).to.be.true; // mastercard
-				expect(valid.card.visa('5105105105105100')).to.be.true; // mastercard
+				expect(valid.card.visa('5555555555554444')).to.be.false; // mastercard
+				expect(valid.card.visa('5105105105105100')).to.be.false; // mastercard
 				expect(valid.card.visa('378282246310005')).to.be.false; // amex
-				expect(valid.card.mastercard('4222222222222')).to.be.true;    // visa
-				expect(valid.card.mastercard('4111111111111111')).to.be.true; // visa
-				expect(valid.card.mastercard('4242424242424242')).to.be.true; // visa
-				expect(valid.card.mastercard('5555555555554444')).to.be.true; // mastercard
-				expect(valid.card.mastercard('5105105105105100')).to.be.true; // mastercard
-				expect(valid.card.mastercard('378282246310005')).to.be.false; // amex
 			});
 		});
 
