@@ -1,4 +1,10 @@
 # s-valid changelog
+## 1.2.0
+* made all methods modular
+	* eg. `var email = require('s-valid').email` to only add the email method
+* methods should throw (not just return false) when passed arguments of wrong type, so now they do.
+* speed improvements to `valid.creditCard` by removing unnecessary regexp tests
+
 ## 1.1.0
 * distinct mastercard and visa regular expressions
 	* removed `mastercardVisa`

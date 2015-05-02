@@ -14,41 +14,12 @@ var valid = require('../index.js');
 // ---------------------------------------
 describe('String', function() {
 
-	describe('_isString', function() {
-
-		it('should return true if passed a string', function() {
-			expect(valid._isString('test')).to.be.true;
-		});
-
-		it('should return false if not passed a string', function() {
-			expect(valid._isString(5)).to.be.false;
-		});
-
-	});
-
-
-	describe('_testRegexp', function() {
-
-		it('should have testable regexps', function() {
-			expect(valid._regexps['email'].test('test@test.com')).to.be.true;
-			expect(valid._regexps['email'].test('test')).to.be.false;
-		});
-
-		it('should return true if passing a regexp test', function() {
-			expect(valid._testRegexp('email', 'test@test.com')).to.be.true;
-		});
-
-		it('should return false if failing a regexp test', function() {
-			expect(valid._testRegexp('email', 'test@test.com')).to.be.true;
-		});
-
-	});
-
-
 	describe('Affirmative', function() {
 
-		it('should return false if not passed a string', function() {
-			expect(valid.affirmative(5)).to.be.false;
+		it('should throw if not passed a string', function() {
+			expect(function() {
+				valid.affirmative(5);
+			}).to.throw();
 		});
 
 		it('should return true if passed a valid affirmative string', function() {
@@ -86,8 +57,10 @@ describe('String', function() {
 
 	describe('AlphaNumeric', function() {
 
-		it('should return false if not passed a string', function() {
-			expect(valid.alphaNumeric(5)).to.be.false;
+		it('should throw if not passed a string', function() {
+			expect(function() {
+				valid.alphaNumeric(5)
+			}).to.throw();
 		});
 
 		it('should return true if passed a valid alphaNumeric string', function() {
@@ -115,8 +88,10 @@ describe('String', function() {
 
 	describe('Alpha (alphabetic)', function() {
 
-		it('should return false if not passed a string', function() {
-			expect(valid.alpha(5)).to.be.false;
+		it('should throw if not passed a string', function() {
+			expect(function() {
+				valid.alpha(5)
+			}).to.throw();
 		});
 
 		it('should return true if passed a valid alphabetic string', function() {
@@ -146,8 +121,10 @@ describe('String', function() {
 
 	describe('Email', function() {
 
-		it('should return false if not passed a string', function() {
-			expect(valid.email(5)).to.be.false;
+		it('should throw if not passed a string', function() {
+			expect(function() {
+				valid.email(5)
+			}).to.throw();
 		});
 
 		it('should return true if passed a valid email', function() {
@@ -169,8 +146,10 @@ describe('String', function() {
 
 	describe('Negatory', function() {
 
-		it('should return false if not passed a string', function() {
-			expect(valid.negatory(0)).to.be.false;
+		it('should throw if not passed a string', function() {
+			expect(function() {
+				valid.negatory(0)
+			}).to.throw();
 		});
 
 		it('should return true if passed a valid negatory string', function() {
@@ -202,8 +181,10 @@ describe('String', function() {
 
 	describe('Numeric String', function() {
 
-		it('should return false if not passed a string', function() {
-			expect(valid.numeric(0)).to.be.false;
+		it('should throw if not passed a string', function() {
+			expect(function() {
+				valid.numeric(5)
+			}).to.throw();
 		});
 
 		it('should return true if passed a valid number string', function() {
@@ -228,8 +209,10 @@ describe('String', function() {
 
 	describe('Value String', function() {
 
-		it('should return false if not passed a string', function() {
-			expect(valid.value(0)).to.be.false;
+		it('should throw if not passed a string', function() {
+			expect(function() {
+				valid.value(5)
+			}).to.throw();
 		});
 
 		it('should return true if passed a valid number string', function() {
@@ -267,8 +250,10 @@ describe('String', function() {
 
 	describe('URL', function() {
 
-		it('should return false if not passed a string', function() {
-			expect(valid.url(5)).to.be.false;
+		it('should throw if not passed a string', function() {
+			expect(function() {
+				valid.url(5)
+			}).to.throw();
 		});
 
 		it('should return true if passed a valid url', function() {
@@ -301,8 +286,10 @@ describe('String', function() {
 
 	describe('Zip Code', function() {
 
-		it('should return false if not passed a string', function() {
-			expect(valid.zipCode(89052)).to.be.false;
+		it('should throw if not passed a string', function() {
+			expect(function() {
+				valid.zipCode(5)
+			}).to.throw();
 		});
 
 		it('should return true if passed a valid US zip code', function() {
@@ -341,29 +328,14 @@ describe('String', function() {
 // ---------------------------------------
 describe('Number', function() {
 
-	describe('_testCardRegexp', function() {
-
-		it('should have testable regexps', function() {
-			expect(valid._regexps.creditCard['visa'].test('4111111111111111')).to.be.true;
-			expect(valid._regexps.creditCard['visa'].test('1234123412341234')).to.be.false;
-		});
-
-		it('should return true if passing a regexp test', function() {
-			expect(valid._testCardRegexp('visa', '4111111111111111')).to.be.true;
-		});
-
-		it('should return false if failing a regexp test', function() {
-			expect(valid._testCardRegexp('visa', '4111111111111111')).to.be.true;
-		});
-
-	});
-
 	describe('Credit Card', function() {
 
 		describe('Generic type', function() {
 
-			it('should return false if not passed a string', function() {
-				expect(valid.card.generic(4242424242424242)).to.be.false;
+			it('should throw if not passed a string', function() {
+				expect(function() {
+					valid.card.generic(5)
+				}).to.throw();
 			});
 
 			it('should return true if passed a valid credit card number', function() {
@@ -393,7 +365,6 @@ describe('Number', function() {
 			});
 
 			it('should return false if not passed a valid credit card number', function() {
-				expect(valid.card.generic(4242424242424242)).to.be.false;
 				expect(valid.card.generic('1234123412341234')).to.be.false;
 				expect(valid.card.generic('1')).to.be.false;
 				expect(valid.card.generic('123456789012345678901234567890')).to.be.false;
@@ -424,7 +395,10 @@ describe('Number', function() {
 				expect(valid.creditCard('6799990100000000019')).to.be.true; // maestro
 				expect(valid.creditCard('5610591081018250')).to.be.true; // australian bankcard (not in any regexp)
 				
-				expect(valid.creditCard(4242424242424242)).to.be.false;
+				expect(function() {
+					valid.creditCard(5)
+				}).to.throw();
+
 				expect(valid.creditCard('1234123412341234')).to.be.false;
 				expect(valid.creditCard('1')).to.be.false;
 				expect(valid.creditCard('123456789012345678901234567890')).to.be.false;
@@ -440,7 +414,6 @@ describe('Number', function() {
 				expect(valid.card.mastercard('4111111111111111')).to.be.false; // visa
 				expect(valid.card.mastercard('4242424242424242')).to.be.false; // visa
 				expect(valid.card.mastercard('378282246310005')).to.be.false;  // amex
-				expect(valid.card.mastercard(4242424242424242)).to.be.false;   // visa
 			});
 		});
 
@@ -530,3 +503,150 @@ describe('Number', function() {
 
 });
 
+describe('Modularity', function() {
+
+	it('should still work for affirmative', function() {
+		var affirmative = require('../').affirmative;
+		expect(affirmative('yes')).to.be.true;
+		expect(affirmative('no')).to.be.false;
+	});
+
+	it('should still work for alpha', function() {
+		var alpha = require('../').alpha;
+		expect(alpha('test')).to.be.true;
+		expect(alpha('test123')).to.be.false;
+	});
+
+	it('should still work for alphaNumeric', function() {
+		var alphaNumeric = require('../').alphaNumeric;
+		expect(alphaNumeric('test123')).to.be.true;
+		expect(alphaNumeric('$')).to.be.false;
+	});
+
+	it('should still work for email', function() {
+		var email = require('../').email;
+		expect(email('test@test.com')).to.be.true;
+		expect(email('test@test')).to.be.false;
+	});
+
+	it('should still work for negatory', function() {
+		var negatory = require('../').negatory;
+		expect(negatory('no')).to.be.true;
+		expect(negatory('yes')).to.be.false;
+	});
+
+	it('should still work for numeric', function() {
+		var numeric = require('../').numeric;
+		expect(numeric('123')).to.be.true;
+		expect(numeric('test123')).to.be.false;
+	});
+
+	it('should still work for value', function() {
+		var value = require('../').value;
+		expect(value('123px')).to.be.true;
+		expect(value('test123')).to.be.false;
+	});
+
+	it('should still work for url', function() {
+		var url = require('../').url;
+		expect(url('http://google.com')).to.be.true;
+		expect(url('http://google')).to.be.false;
+	});
+
+	it('should still work for zipCode', function() {
+		var zipCode = require('../').zipCode;
+		expect(zipCode('89052-6589')).to.be.true;
+		expect(zipCode('123456')).to.be.false;
+	});
+
+	describe('Credit Cards', function() {
+
+		it('should still work for aliased generic card type', function() {
+			var creditCard = require('../').creditCard;
+			expect(creditCard('4242424242424242')).to.be.true;
+			expect(creditCard('1234123412341234')).to.be.false;
+		});
+
+		it('should still work for generic card type', function() {
+			var creditCardGeneric = require('../').card.generic;
+			expect(creditCardGeneric('4242424242424242')).to.be.true;
+			expect(creditCardGeneric('1234123412341234')).to.be.false;
+		});
+
+		it('should still work for mastercard', function() {
+			var mastercard = require('../').card.mastercard;
+			expect(mastercard('5555555555554444')).to.be.true;
+			expect(mastercard('4242424242424242')).to.be.false;
+		});
+
+		it('should still work for visa', function() {
+			var visa = require('../').card.visa;
+			expect(visa('4242424242424242')).to.be.true;
+			expect(visa('5555555555554444')).to.be.false;
+		});
+
+		it('should still work for amex', function() {
+			var amex = require('../').card.amex;
+			expect(amex('378282246310005')).to.be.true;
+			expect(amex('4242424242424242')).to.be.false;
+		});
+
+		it('should still work for carteBlanche', function() {
+			var carteBlanche = require('../').card.carteBlanche;
+			expect(carteBlanche('38000000000006')).to.be.true;
+			expect(carteBlanche('4242424242424242')).to.be.false;
+		});
+
+		it('should still work for dinersClub', function() {
+			var dinersClub = require('../').card.dinersClub;
+			expect(dinersClub('30569309025904')).to.be.true;
+			expect(dinersClub('4242424242424242')).to.be.false;
+		});
+
+		it('should still work for discover', function() {
+			var discover = require('../').card.discover;
+			expect(discover('6011111111111117')).to.be.true;
+			expect(discover('4242424242424242')).to.be.false;
+		});
+
+		it('should still work for jcb', function() {
+			var jcb = require('../').card.jcb;
+			expect(jcb('3530111333300000')).to.be.true;
+			expect(jcb('4242424242424242')).to.be.false;
+		});
+
+		it('should still work for maestro', function() {
+			var maestro = require('../').card.maestro;
+			expect(maestro('6759649826438453')).to.be.true;
+			expect(maestro('4242424242424242')).to.be.false;
+		});
+
+		it('should still work for solo', function() {
+			var solo = require('../').card.solo;
+			expect(solo('6331101999990016')).to.be.true;
+			expect(solo('4242424242424242')).to.be.false;
+		});
+
+		it('should still work for lasercard', function() {
+			var lasercard = require('../').card.lasercard;
+			expect(lasercard('6304850000000040')).to.be.true;
+			expect(lasercard('4242424242424242')).to.be.false;
+		});
+
+		it('should still work for unionpay', function() {
+			var unionpay = require('../').card.unionpay;
+			expect(unionpay('6240008631401148')).to.be.true;
+			expect(unionpay('4242424242424242')).to.be.false;
+		});
+
+		it('should still work when `card` is required', function() {
+			var card = require('../').card;
+			expect(card.generic('4242424242424242')).to.be.true;
+			expect(card.generic('1234123412341234')).to.be.false;
+			expect(card.mastercard('5555555555554444')).to.be.true;
+			expect(card.mastercard('4242424242424242')).to.be.false;
+		})
+
+	});
+
+});

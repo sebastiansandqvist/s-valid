@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/s-valid.svg)](https://www.npmjs.com/package/s-valid) ![Dependencies](https://img.shields.io/david/sebastiansandqvist/s-valid.svg) [![build status](http://img.shields.io/travis/sebastiansandqvist/s-valid.svg)](https://travis-ci.org/sebastiansandqvist/s-valid) [![NPM license](https://img.shields.io/npm/l/s-valid.svg)](https://www.npmjs.com/package/s-valid) ![Stability](https://img.shields.io/badge/stability-stable-green.svg) [![Test Coverage](https://codeclimate.com/github/sebastiansandqvist/s-valid/badges/coverage.svg)](https://codeclimate.com/github/sebastiansandqvist/s-valid)
 
-## Simple string validator
+## Simple modular string validator
 #### For common tests (credit cards, urls, email addresses, ...)
 * **Dependency-free**
 * **Tested on node & iojs**
@@ -28,6 +28,14 @@ if (valid.email('email@test.com')) {
 // primary use case: server-side form validation
 if (!valid.email(req.body.email)) {
 	// return error...
+}
+```
+**Use it modularly if you prefer**
+```javascript
+var email = require('s-valid').email; // only require the method you need
+
+if (email('email@test.com')) {
+	// ...
 }
 ```
 
