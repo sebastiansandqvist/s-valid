@@ -18,7 +18,7 @@ valid.affirmative = function(str) {
 // ---------------------------------------
 valid.alphaNumeric = function(str) {
 
-	var regex = /^[A-Za-z0-9]+$/;
+	var regex = /^[a-z0-9]+$/i;
 
 	return regex.test(str.toLowerCase());
 
@@ -29,7 +29,7 @@ valid.alphaNumeric = function(str) {
 // ---------------------------------------
 valid.alpha = function(str) {
 
-	var regex = /^[A-Za-z]+$/;
+	var regex = /^[a-z]+$/i;
 
 	return regex.test(str.toLowerCase());
 
