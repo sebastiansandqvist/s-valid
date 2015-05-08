@@ -653,6 +653,11 @@ describe('Modularity', function() {
 		var email = require('../email');
 		expect(email('email@email.com')).to.be.true;
 		expect(email('email@email.')).to.be.false;
+
+		var card = require('../card');
+		expect(card.visa('4242424242424242')).to.be.true;
+		expect(card.visa('1234')).to.be.false;
+
 	});
 
 });

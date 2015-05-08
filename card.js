@@ -18,6 +18,7 @@ function CreditCard(regex) {
 // ----- specific card regexp validation
 // ---------------------------------------
 module.exports = {
+	generic: require('./creditCard.js'),
 	visa: new CreditCard(/^4[0-9]{12}(?:[0-9]{3})?$/),
 	mastercard: new CreditCard(/^5[1-5][0-9]{14}$/),
 	amex: new CreditCard(/^3[47][0-9]{13}$/),

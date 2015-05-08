@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp = require('gulp');
 var mocha = require('gulp-mocha');
 var lint = require('gulp-jshint');
@@ -5,7 +7,7 @@ var lint = require('gulp-jshint');
 // ----- lint s-valid
 // ---------------------------------------
 gulp.task('lint', function() {
-	return gulp.src('src/*.js')
+	return gulp.src('*.js')
 		.pipe(lint('etc/.jshintrc'))
 		.pipe(lint.reporter('jshint-stylish'));
 });
