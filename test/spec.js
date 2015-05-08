@@ -649,4 +649,10 @@ describe('Modularity', function() {
 
 	});
 
+	it('should work when a file is required', function() {
+		var email = require('../email');
+		expect(email('email@email.com')).to.be.true;
+		expect(email('email@email.')).to.be.false;
+	});
+
 });

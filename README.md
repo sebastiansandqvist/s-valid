@@ -38,6 +38,15 @@ if (email('email@test.com')) {
 	// ...
 }
 ```
+**If you really need to save bytes...**
+```javascript
+var email = require('s-valid/email');
+
+if (email('email@test.com')) {
+	// ...
+}
+
+```
 
 ## All Methods
 
