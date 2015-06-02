@@ -1,6 +1,6 @@
 {
   "name": "s-valid",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/sebastiansandqvist/s-valid",
   "devDependencies": {
-    "blanket": "^1.1.6",
+    "blanket": "1.1.6",
     "chai": "^2.1.2",
     "codeclimate-test-reporter": "0.0.4",
     "gulp": "^3.8.11",
@@ -36,6 +36,5 @@
     "jshint-stylish": "^1.0.1",
     "mocha": "^2.2.1",
     "mocha-lcov-reporter": "0.0.2"
-  },
-  "dependencies": {}
+  }
 }

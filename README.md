@@ -7,7 +7,7 @@
 * **Dependency-free**
 * **Tested on node & iojs**
 
-*s-valid performs a type check before any other validation occurs. Strings only!*
+*Note: Strings only!*
 
 This module simplifies validation that requires regular expressions or multiple steps. It will not include anything that is already simple to calculate and reason about, such as string length.
 
