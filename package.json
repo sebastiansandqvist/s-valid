@@ -1,14 +1,30 @@
 {
   "name": "s-valid",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "engines": {
     "node": ">= 0.10.0"
   },
   "description": "Simple validator for strings",
   "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md",
+    "test",
+    "etc/coverage.html",
+    "affirmative.js",
+    "alpha.js",
+    "alphaNumeric.js",
+    "card.js",
+    "creditCard.js",
+    "email.js",
+    "negatory.js",
+    "numeric.js",
+    "url.js",
+    "value.js",
+    "zipCode.js"
+  ],
   "scripts": {
     "test": "mocha",
-    "coverage_html": "mocha --require blanket -R html-cov > etc/coverage.html",
     "coverage": "mocha --require blanket --reporter mocha-lcov-reporter > etc/lcov.info"
   },
   "repository": {
