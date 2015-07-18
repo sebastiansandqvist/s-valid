@@ -13,3 +13,4 @@ valid.numeric = require('./numeric.js');
 valid.url = require('./url.js');
 valid.value = require('./value.js');
 valid.zipCode = require('./zipCode.js');
+valid.zipCodeLong = require('./zipCodeLong.js');

@@ -296,9 +296,6 @@ describe('String', function() {
 			expect(valid.zipCode('89052')).to.be.true;
 			expect(valid.zipCode('01001')).to.be.true;
 			expect(valid.zipCode('00501')).to.be.true;
-			expect(valid.zipCode('01001-6589')).to.be.true;
-			expect(valid.zipCode('00501-6589')).to.be.true;
-			expect(valid.zipCode('89052-6589')).to.be.true;
 		});
 
 		it('should return false if not passed a valid US zip code', function() {
@@ -312,9 +309,45 @@ describe('String', function() {
 			expect(valid.zipCode('89052-658')).to.be.false;
 			expect(valid.zipCode('890526589')).to.be.false;
 			expect(valid.zipCode('123456')).to.be.false;
+			expect(valid.zipCode('01001-6589')).to.be.false;
+			expect(valid.zipCode('00501-6589')).to.be.false;
+			expect(valid.zipCode('89052-6589')).to.be.false;
 		});
 
 	});
+
+	describe('Zip Code + 4', function() {
+
+		it('should throw if not passed a string', function() {
+			expect(function() {
+				valid.zipCodeLong(5)
+			}).to.throw();
+		});
+
+		it('should return true if passed a valid US zip code', function() {
+			expect(valid.zipCodeLong('89052')).to.be.true;
+			expect(valid.zipCodeLong('01001')).to.be.true;
+			expect(valid.zipCodeLong('00501')).to.be.true;
+			expect(valid.zipCodeLong('01001-6589')).to.be.true;
+			expect(valid.zipCodeLong('00501-6589')).to.be.true;
+			expect(valid.zipCodeLong('89052-6589')).to.be.true;
+		});
+
+		it('should return false if not passed a valid US zip code', function() {
+			expect(valid.zipCodeLong('0')).to.be.false;
+			expect(valid.zipCodeLong('foo')).to.be.false;
+			expect(valid.zipCodeLong('00000')).to.be.false;
+			expect(valid.zipCodeLong('00001')).to.be.false;
+			expect(valid.zipCodeLong('00500')).to.be.false;
+			expect(valid.zipCodeLong('-89052')).to.be.false;
+			expect(valid.zipCodeLong('89052-')).to.be.false;
+			expect(valid.zipCodeLong('89052-658')).to.be.false;
+			expect(valid.zipCodeLong('890526589')).to.be.false;
+			expect(valid.zipCodeLong('123456')).to.be.false;
+		});
+
+	});
+
 
 
 });
@@ -555,8 +588,14 @@ describe('Modularity', function() {
 
 	it('should still work for zipCode', function() {
 		var zipCode = require('../').zipCode;
-		expect(zipCode('89052-6589')).to.be.true;
-		expect(zipCode('123456')).to.be.false;
+		expect(zipCode('89052')).to.be.true;
+		expect(zipCode('89052-6589')).to.be.false;
+	});
+
+	it('should still work for zipCode + 4', function() {
+		var zipCodeLong = require('../').zipCodeLong;
+		expect(zipCodeLong('89052-6589')).to.be.true;
+		expect(zipCodeLong('123456')).to.be.false;
 	});
 
 	describe('Credit Cards', function() {

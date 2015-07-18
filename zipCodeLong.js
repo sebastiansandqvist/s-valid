@@ -18,7 +18,7 @@ module.exports = function(str) {
 	}
 
 	// [3]
-	var regex = /^\d{5}$/;
+	var regex = /^\d{5}(-\d{4})?$/;
 
 	return regex.test(str);
 

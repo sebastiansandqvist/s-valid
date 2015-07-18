@@ -32,20 +32,11 @@ if (!valid.email(req.body.email)) {
 ```
 **Use it modularly if you prefer**
 ```javascript
-var email = require('s-valid').email; // only require the method you need
-
-if (email('email@test.com')) {
-	// ...
-}
-```
-**If you really need to save bytes...**
-```javascript
 var email = require('s-valid/email');
 
 if (email('email@test.com')) {
 	// ...
 }
-
 ```
 
 ## All Methods
@@ -138,9 +129,18 @@ valid.url('http:/test.com'); // false
 ##### Zip code
 ```javascript
 valid.zipCode('89052'); // true
-valid.zipCode('89052-6589'); // true
+valid.zipCode('89052-6589'); // false
 valid.zipCode('890526589'); // false
 ```
+
+##### Zip code + 4
+*Additional 4-digit code is optional and must be separated by a hyphen*
+```javascript
+valid.zipCodeLong('89052'); // true
+valid.zipCodeLong('89052-6589'); // true
+valid.zipCodeLong('890526589'); // false
+```
+
 
 ## Additional notes
 [is.js](https://github.com/arasatasaygin/is.js) provided some of the regular expressions used behind-the-scenes, however the following improvements have been made to them:
