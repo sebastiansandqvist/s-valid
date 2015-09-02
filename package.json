@@ -1,6 +1,6 @@
 {
   "name": "s-valid",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "engines": {
     "node": ">= 1.0.0"
   },
@@ -11,6 +11,7 @@
     "README.md",
     "CHANGELOG.md",
     "test",
+    "etc",
     "affirmative.js",
     "alpha.js",
     "alphaNumeric.js",

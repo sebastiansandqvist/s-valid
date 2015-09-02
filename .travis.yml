@@ -16,10 +16,7 @@ node_js:
 sudo: false
 matrix:
   allow_failures:
-    - node_js: "iojs-v2.5"
-    - node_js: "iojs-v2.0"
-    - node_js: "iojs-v1.8"
-    - node_js: "iojs-v1.0"
+    - node_js: "0.12"
     - node_js: "0.11"
     - node_js: "0.10"
     - node_js: "0.9"
