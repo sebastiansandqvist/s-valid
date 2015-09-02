@@ -1,0 +1,6 @@
+{
+	"extends": "@seabass",
+	"rules": {
+		"max-len": [2, 1000, 2]
+	}
+}

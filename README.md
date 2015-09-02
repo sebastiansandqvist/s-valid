@@ -6,6 +6,7 @@
 #### For common tests (credit cards, urls, email addresses, ...)
 * **Dependency-free**
 * **Tested on node & iojs**
+* **Uses es6, so transpile for browser use**
 
 *Note: Strings only!*
 

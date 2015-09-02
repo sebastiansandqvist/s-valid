@@ -1,6 +1,6 @@
 'use strict';
 
-var valid = module.exports = {};
+let valid = module.exports = {};
 
 valid.affirmative = require('./affirmative.js');
 valid.alpha = require('./alpha.js');

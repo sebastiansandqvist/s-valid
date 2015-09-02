@@ -15,16 +15,16 @@ module.exports = function(str) {
 		return false;
 	}
 
-	// [3] method of testing credit cards from 
+	// [3] method of testing credit cards from
 	// http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js
-	var testNumber = 0;
+	let testNumber = 0;
 
-	for (var i = str.length - 1, current, currentInteger = 0, even = false; i>=0; i--) {
+	for (let i = str.length - 1, current, currentInteger = 0, even = false; i >= 0; i--) {
 		
 		current = str.charAt(i);
 		currentInteger = parseInt(current, 10);
 
-		if (even && (currentInteger *= 2) > 9 ) {
+		if (even && (currentInteger *= 2) > 9) {
 			currentInteger -= 9;
 		}
 

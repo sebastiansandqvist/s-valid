@@ -11,14 +11,14 @@ module.exports = function(str) {
 	str = str.toLowerCase();
 
 	// [2] every zip code begins with a number, and none are < 00501
-	var numeric = parseInt(str, 10);
+	const numeric = parseInt(str, 10);
 
 	if (isNaN(numeric) || numeric < 501) {
 		return false;
 	}
 
 	// [3]
-	var regex = /^\d{5}$/;
+	const regex = /^\d{5}$/;
 
 	return regex.test(str);
 

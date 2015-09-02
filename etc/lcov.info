@@ -1,5 +1,7 @@
-SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/modules/s-valid/index.js
-DA:1,1
+TN:
+SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/~modules/s-valid/index.js
+FNF:0
+FNH:0
 DA:3,1
 DA:5,1
 DA:6,1
@@ -12,34 +14,77 @@ DA:12,1
 DA:13,1
 DA:14,1
 DA:15,1
+DA:16,1
+LF:13
+LH:13
+BRF:0
+BRH:0
 end_of_record
-SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/modules/s-valid/affirmative.js
-DA:1,1
+TN:
+SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/~modules/s-valid/affirmative.js
+FN:5,(anonymous_1)
+FNF:1
+FNH:1
+FNDA:27,(anonymous_1)
 DA:5,1
 DA:7,27
 DA:9,27
+LF:3
+LH:3
+BRF:0
+BRH:0
 end_of_record
-SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/modules/s-valid/alpha.js
-DA:1,1
+TN:
+SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/~modules/s-valid/alpha.js
+FN:5,(anonymous_1)
+FNF:1
+FNH:1
+FNDA:19,(anonymous_1)
 DA:5,1
 DA:7,19
 DA:9,19
+LF:3
+LH:3
+BRF:0
+BRH:0
 end_of_record
-SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/modules/s-valid/alphaNumeric.js
-DA:1,1
+TN:
+SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/~modules/s-valid/alphaNumeric.js
+FN:5,(anonymous_1)
+FNF:1
+FNH:1
+FNDA:17,(anonymous_1)
 DA:5,1
 DA:7,17
 DA:9,17
+LF:3
+LH:3
+BRF:0
+BRH:0
 end_of_record
-SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/modules/s-valid/card.js
-DA:1,1
+TN:
+SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/~modules/s-valid/card.js
+FN:7,CreditCard
+FN:9,(anonymous_2)
+FNF:2
+FNH:2
+FNDA:11,CreditCard
+FNDA:64,(anonymous_2)
 DA:7,1
 DA:9,11
 DA:11,64
 DA:20,1
+LF:4
+LH:4
+BRF:0
+BRH:0
 end_of_record
-SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/modules/s-valid/creditCard.js
-DA:1,1
+TN:
+SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/~modules/s-valid/creditCard.js
+FN:8,(anonymous_1)
+FNF:1
+FNH:1
+FNDA:60,(anonymous_1)
 DA:8,1
 DA:11,60
 DA:14,58
@@ -53,44 +98,104 @@ DA:28,102
 DA:31,846
 DA:32,846
 DA:35,54
+LF:13
+LH:13
+BRDA:14,1,0,4
+BRDA:14,1,1,54
+BRDA:14,2,0,58
+BRDA:14,2,1,56
+BRDA:27,3,0,102
+BRDA:27,3,1,744
+BRDA:27,4,0,846
+BRDA:27,4,1,418
+BRF:8
+BRH:8
 end_of_record
-SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/modules/s-valid/email.js
-DA:1,1
+TN:
+SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/~modules/s-valid/email.js
+FN:5,(anonymous_1)
+FNF:1
+FNH:1
+FNDA:13,(anonymous_1)
 DA:5,1
 DA:7,13
 DA:9,13
+LF:3
+LH:3
+BRF:0
+BRH:0
 end_of_record
-SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/modules/s-valid/negatory.js
-DA:1,1
+TN:
+SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/~modules/s-valid/negatory.js
+FN:5,(anonymous_1)
+FNF:1
+FNH:1
+FNDA:21,(anonymous_1)
 DA:5,1
 DA:7,21
 DA:9,21
+LF:3
+LH:3
+BRF:0
+BRH:0
 end_of_record
-SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/modules/s-valid/numeric.js
-DA:1,1
+TN:
+SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/~modules/s-valid/numeric.js
+FN:5,(anonymous_1)
+FNF:1
+FNH:1
+FNDA:14,(anonymous_1)
 DA:5,1
 DA:7,14
 DA:9,13
 DA:10,1
 DA:13,12
+LF:5
+LH:5
+BRDA:9,1,0,1
+BRDA:9,1,1,12
+BRF:2
+BRH:2
 end_of_record
-SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/modules/s-valid/url.js
-DA:1,1
+TN:
+SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/~modules/s-valid/url.js
+FN:5,(anonymous_1)
+FNF:1
+FNH:1
+FNDA:23,(anonymous_1)
 DA:5,1
 DA:7,23
 DA:9,23
+LF:3
+LH:3
+BRF:0
+BRH:0
 end_of_record
-SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/modules/s-valid/value.js
-DA:1,1
+TN:
+SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/~modules/s-valid/value.js
+FN:5,(anonymous_1)
+FNF:1
+FNH:1
+FNDA:27,(anonymous_1)
 DA:5,1
 DA:7,27
 DA:9,26
 DA:12,26
 DA:13,12
 DA:16,26
+LF:6
+LH:6
+BRDA:12,1,0,12
+BRDA:12,1,1,14
+BRF:2
+BRH:2
 end_of_record
-SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/modules/s-valid/zipCode.js
-DA:1,1
+TN:
+SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/~modules/s-valid/zipCode.js
+FN:8,(anonymous_1)
+FNF:1
+FNH:1
+FNDA:19,(anonymous_1)
 DA:8,1
 DA:11,19
 DA:14,18
@@ -98,4 +203,34 @@ DA:16,18
 DA:17,6
 DA:21,12
 DA:23,12
+LF:7
+LH:7
+BRDA:16,1,0,6
+BRDA:16,1,1,12
+BRDA:16,2,0,18
+BRDA:16,2,1,17
+BRF:4
+BRH:4
+end_of_record
+TN:
+SF:/Users/sebastiansandqvist/Documents/Sites & Projects/apps/~modules/s-valid/zipCodeLong.js
+FN:8,(anonymous_1)
+FNF:1
+FNH:1
+FNDA:19,(anonymous_1)
+DA:8,1
+DA:11,19
+DA:14,18
+DA:16,18
+DA:17,6
+DA:21,12
+DA:23,12
+LF:7
+LH:7
+BRDA:16,1,0,6
+BRDA:16,1,1,12
+BRDA:16,2,0,18
+BRDA:16,2,1,17
+BRF:4
+BRH:4
 end_of_record
