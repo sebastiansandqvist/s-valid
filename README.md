@@ -105,6 +105,13 @@ valid.email('email@test.com'); // true
 valid.email('email@test'); // false
 ```
 
+##### Social Security Number (USA)
+```javascript
+valid.socialSecurity('078-05-1120'); // true (from Wikipedia)
+valid.socialSecurity('078-00-1120'); //false
+valid.socialSecurity('078051120'); // false
+```
+
 ##### Value string
 *Similar to `numeric`, but less restrictive. Passes for $ (or any non-number first character), commas, and units (such as 12px or 38BTC)*
 ```javascript

@@ -1,6 +1,6 @@
 {
   "name": "s-valid",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "engines": {
     "node": ">= 1.0.0"
   },
@@ -20,6 +20,7 @@
     "email.js",
     "negatory.js",
     "numeric.js",
+    "socialSecurity.js",
     "url.js",
     "value.js",
     "zipCode.js",
