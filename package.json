@@ -29,7 +29,7 @@
   "scripts": {
     "test": "mocha",
     "posttest": "npm run lint",
-    "lint": "jscs *.js --config=./etc/.jscs.json && eslint *.js -c etc/.eslint.json",
+    "lint": "eslint *.js -c etc/.eslint.json",
     "postlint": "npm run coverage",
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha -dir etc --report lcovonly -- test/ -R spec",
     "postcoverage": "rm etc/coverage.json"

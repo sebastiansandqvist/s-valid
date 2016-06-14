@@ -4,7 +4,7 @@
 // ---------------------------------------
 module.exports = function(str) {
 
-	const regex = /^[a-z]+$/i;
+	var regex = /^[a-z]+$/i;
 
 	return regex.test(str.toLowerCase());
 

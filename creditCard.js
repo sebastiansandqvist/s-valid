@@ -17,9 +17,9 @@ module.exports = function(str) {
 
 	// [3] method of testing credit cards from
 	// http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js
-	let testNumber = 0;
+	var testNumber = 0;
 
-	for (let i = str.length - 1, current, currentInteger = 0, even = false; i >= 0; i--) {
+	for (var i = str.length - 1, current, currentInteger = 0, even = false; i >= 0; i--) {
 		
 		current = str.charAt(i);
 		currentInteger = parseInt(current, 10);
